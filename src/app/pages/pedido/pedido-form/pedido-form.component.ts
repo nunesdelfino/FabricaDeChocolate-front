@@ -1,6 +1,6 @@
 /* tslint:disable:no-redundant-jsdoc */
 import {NgForm} from '@angular/forms';
-import {Component, ViewChild} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatDialog} from '@angular/material/dialog';
@@ -8,6 +8,7 @@ import {MessageService} from '../../../shared/message/message.service';
 import {AcaoSistema} from '../../../shared/component/acao-sistema.acao';
 import {SecurityService} from '../../../shared/security/security.service';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
+import {AbstractComponent} from '../../../shared/component/Abstract.component';
 
 /**
  * Componente de formulário de Amigo.
@@ -19,13 +20,14 @@ import {PedidoClientService} from '../shared/pedido-client/pedido-client.service
   templateUrl: './pedido-form.component.html',
   styleUrls: ['./pedido-form.component.scss']
 })
-export class PedidoFormComponent {
+export class PedidoFormComponent extends AbstractComponent  implements OnInit {
 
   public acaoSistema: AcaoSistema;
 
   public pedido: any;
   public tamanho: any[];
   public sabores: any[];
+  public statusPedido: any[];
   public submittedPedido: boolean;
 
   public dataSourceGrupos: MatTableDataSource<any>;
@@ -52,6 +54,7 @@ export class PedidoFormComponent {
     public securityService: SecurityService,
     private pedidoClientService: PedidoClientService
   ) {
+    super();
     this.acaoSistema = new AcaoSistema(route);
     this.dataSourceGrupos = new MatTableDataSource<any>();
 
@@ -156,6 +159,9 @@ export class PedidoFormComponent {
         this.router.navigateByUrl('/administracao/pedido');
       });
     }
+  }
+
+  ngOnInit(): void {
   }
 
 }

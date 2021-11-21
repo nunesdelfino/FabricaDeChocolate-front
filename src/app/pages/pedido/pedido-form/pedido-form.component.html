@@ -17,22 +17,6 @@
         </mat-card-title>
         <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
 
-          <div fxLayout="row" fxLayoutAlign.gt-xs="end end" fxLayout.lt-sm="column" fxLayoutGap="0.7%" fxLayoutGap.xs="7%">
-
-            <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
-                 *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
-              <mat-label>{{'LABEL_STATUS_PEDIDO' | i18n}}:</mat-label>
-              <mat-slide-toggle [(ngModel)]="pedido.ativo" (change)="alterarStatusPedido(pedido)" name="statusAtivo"
-                                title="{{ (pedido.ativo? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}"
-              >
-              </mat-slide-toggle>
-              <mat-label
-                *ngIf="acaoSistema.isAcaoVisualizar()">
-                {{(pedido.ativo ? 'LABEL_SIM' : 'LABEL_NAO') | i18n}}
-              </mat-label>
-            </div>
-          </div>
-
 <!--          LINHA UM-->
 
           <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
@@ -58,15 +42,20 @@
 <!--          LINHA DOIS-->
 
           <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
-
-            <mat-form-field fxFlex>
-              <mat-label>{{'LABEL_INFORME_TIPO_OVO' | i18n}}</mat-label>
-              <input matInput placeholder="{{'LABEL_INFORME_TIPO_OVO' | i18n}}" title="{{'LABEL_INFORME_TIPO_OVO' | i18n}}"
-                     [(ngModel)]="pedido.tipoOvo" name="tipoOvo" required maxlength="20"
-                     [disabled]="acaoSistema.isAcaoVisualizar()"
-              >
-              <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
-            </mat-form-field>
+          <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
+            <mat-label>{{'LABEL_TIPO_OVO' | i18n}}</mat-label>
+            <mat-select placeholder="{{'LABEL_TIPO_OVO' | i18n}}" title="{{'LABEL_TIPO_OVO' | i18n}}"
+                        [(ngModel)]="pedido.tipoOvo"
+                        [disabled]="acaoSistema.isAcaoVisualizar()"
+                        name="tipoOvo" required
+            >
+              <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
+              <mat-option *ngFor="let tipoOvo of listTipoOvo" [value]="tipoOvo.id">
+                {{tipoOvo.descricao}}
+              </mat-option>
+            </mat-select>
+            <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
+          </mat-form-field>
 
 
             <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
@@ -81,6 +70,7 @@
                   {{tamanho.tamanho}}
                 </mat-option>
               </mat-select>
+              <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
             </mat-form-field>
 
 
@@ -102,6 +92,7 @@
                   {{sabor.sabor}}
                 </mat-option>
               </mat-select>
+              <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
             </mat-form-field>
 
 
@@ -180,7 +171,7 @@
 
             <mat-form-field fxFlex fxFlex.gt-xs="50" fxFlex.lt-sm="100">
               <mat-label>{{'LABEL_DATA_ENTREGA' | i18n}}</mat-label>
-              <input matInput [matDatepicker]="picker" [(ngModel)]="pedido.dataEntrega" name="dataEntrega" readonly
+              <input matInput [matDatepicker]="picker" [(ngModel)]="pedido.dataEntrega" name="dataEntrega" required readonly
                      (focus)="picker.open()" (click)="picker.open()" placeholder="{{'LABEL_DATA_AMIZADE' | i18n}}"
                      [disabled]="acaoSistema.isAcaoVisualizar()">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -216,16 +207,30 @@
 
           <!--          LINHA SETE-->
 
-          <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+          <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%"
+               *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_INFORME_PRECO' | i18n}}</mat-label>
               <input matInput placeholder="{{'LABEL_INFORME_PRECO' | i18n}}" title="{{'LABEL_INFORME_PRECO' | i18n}}"
                      [(ngModel)]="pedido.preco" name="preco" maxlength="150"
-                     [disabled]="acaoSistema.isAcaoVisualizar()"
-              >
+                     [disabled]="acaoSistema.isAcaoVisualizar()">
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
             </mat-form-field>
 
+
+            <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
+              <mat-label>{{'LABEL_STATUS_PEDIDO' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_STATUS_PEDIDO' | i18n}}" title="{{'LABEL_STATUS_PEDIDO' | i18n}}"
+                          [(ngModel)]="pedido.status"
+                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          name="status"
+              >
+                <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
+                <mat-option *ngFor="let statusPedido of listStatusPedido" [value]="statusPedido.id">
+                  {{statusPedido.descricao}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           </div>
 
 

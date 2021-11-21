@@ -42,6 +42,56 @@ export class StatusAtivoInativo {
 }
 
 /**
+ * Classe que disponibiliza as constantes de Status Pedido na aplicação.
+ *
+ * @author Gabriel Nunes
+ */
+export class StatusPedido {
+
+  public static readonly PENDENTE: StatusPedido = new StatusPedido('pendente', 'Pendente');
+
+  public static readonly ACEITO: StatusPedido = new StatusPedido('aceito', 'Aceito');
+
+  public static readonly CANCELADO: StatusPedido = new StatusPedido('cancelado', 'Cancelado');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
+
+/**
+ * Classe que disponibiliza as constantes de Status Pedido na aplicação.
+ *
+ * @author Gabriel Nunes
+ */
+export class TipoOvo {
+
+  public static readonly COLHER: TipoOvo = new TipoOvo('colher', 'Colher');
+
+  public static readonly SIMPLES: TipoOvo = new TipoOvo('simples', 'Simples');
+
+  public static readonly TRUFADO: TipoOvo = new TipoOvo('trufado', 'Trufado');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
+
+/**
  * Classe que disponibiliza as constantes de Status SimNao na aplicação.
  *
  * @author Guiliano Rangel (UEG)

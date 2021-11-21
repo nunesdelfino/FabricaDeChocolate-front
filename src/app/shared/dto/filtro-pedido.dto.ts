@@ -31,7 +31,7 @@ export class FiltroPedidoDTO {
     public nome?: string,
     public idTamanho?: number,
     public dataEntrega?: string,
-    public ativo?: boolean,
+    public status?: string,
     public idSaborUm?: number,
     public idSaborDois?: number,
     public idSaborTres?: number,
@@ -79,8 +79,8 @@ export class FiltroPedidoDTO {
       params = params.append('dataEntrega', this.dataEntrega );
     }
 
-    if (this.ativo) {
-      params = params.append('ativo', this.ativo ? 'true' : 'false');
+    if (this.status) {
+      params = params.append('status', String(this.status));
     }
 
     if (this.idSaborUm) {

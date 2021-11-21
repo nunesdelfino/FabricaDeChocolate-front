@@ -116,7 +116,7 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_DADOS_PEDIDO: 'Dados do pedido',
       LABEL_REMOVER_PEDIDO: 'Remover pedido',
       LABEL_PEDIDO: 'Pedido',
-      LABEL_STATUS_PEDIDO: "Ativo",
+      LABEL_STATUS_PEDIDO: "Status",
       LABEL_NUMERO: "Numero",
       LABEL_TIPO_OVO: "Tipo Ovo",
       LABEL_SABORES: "Sabores",
