@@ -5,7 +5,6 @@ import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 import { MessageService } from 'src/app/shared/message/message.service';
 import { SaborClientService } from './sabor-client.service';
-import {FiltroTipoAmigoDTO} from '../../../../shared/dto/filtro-tipo-amigo.dto';
 import {FiltroSaborDTO} from "../../../../shared/dto/filtro-sabor.dto";
 
 /**

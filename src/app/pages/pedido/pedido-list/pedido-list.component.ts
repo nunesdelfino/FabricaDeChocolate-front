@@ -8,7 +8,6 @@ import {MessageService} from 'src/app/shared/message/message.service';
 import {SecurityService} from 'src/app/shared/security/security.service';
 import {AbstractComponent} from '../../../shared/component/Abstract.component';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
-import {FiltroAmigoDTO} from '../../../shared/dto/filtro-amigo.dto';
 import {formatDate} from '@angular/common';
 import {FiltroPedidoDTO} from "../../../shared/dto/filtro-pedido.dto";
 
@@ -33,8 +32,6 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
   public tamanhos: any[];
 
   public dataEntrega: Date = null;
-
-  // public displayedColumns = ['nome', 'numero', 'tipoOvo', 'tamanho', 'sabores', 'entregar', 'endereco', 'dataEntrega', 'preco', 'observacao', 'ativo'];
 
   public displayedColumns = ['nome', 'tipoOvo', 'tamanho', 'dataEntrega', 'observacao', 'ativo', 'acoes'];
 
@@ -75,11 +72,11 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
    *
    * @param FiltroPedidoDTO
    */
-  public pesquisar(filtroAmigoDTO: FiltroAmigoDTO): void {
+  public pesquisar(filtroPedidoDTO: FiltroPedidoDTO): void {
     if (this.dataEntrega != null) {
       this.filtroDTO.dataEntrega = formatDate(this.dataEntrega, 'yyyy/MM/dd', 'pt-br');
     }
-    this.pedidoClientService.getByFiltro(filtroAmigoDTO).subscribe(data => {
+    this.pedidoClientService.getByFiltro(filtroPedidoDTO).subscribe(data => {
       this.dataSource.paginator = this.paginator;
       this.dataSource.data = data;
     }, data => {
@@ -92,12 +89,12 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
    * Limpa o filtro de pesquisa informado.
    */
   public limpar(): void {
-    this.filtroDTO = FiltroAmigoDTO.getInstace();
+    this.filtroDTO = FiltroPedidoDTO.getInstace();
     this.dataSource.data = [];
   }
 
   /**
-   * Altera o status do Amigo informado.
+   * Altera o status do pedido informado.
    *
    * @param pedido
    */
@@ -110,7 +107,7 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
   }
 
   /**
-   * Tornar Amigo o Amigo informado.
+   * Tornar Ativar o pedido informado.
    *
    * @param pedido
    */
@@ -130,7 +127,7 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
   }
 
   /**
-   * Deixar de ser Amigo do cadastro informado.
+   * Desativar Pedido do cadastro informado.
    *
    * @param pedido
    */
@@ -150,7 +147,7 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
   }
 
   /**
-   * remover o Amigo informado.
+   * remover o Pedido informado.
    *
    * @param pedido
    */

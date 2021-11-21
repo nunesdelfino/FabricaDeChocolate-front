@@ -59,8 +59,6 @@ export class AppMessage implements InternacionalizacaoResource {
       TITLE_ADMINISTRADOR: 'Administrador',
       TITLE_SISTEMA_NOME: 'Fábrica de Chocolate',
 
-      TITLE_SISTEMA_ORGAO_NOME: 'Secretaria de Segurança Pública',
-
 
       // Textos UC003-Manter Grupo
       LABEL_LISTAR_GRUPO: 'Lista de grupos',

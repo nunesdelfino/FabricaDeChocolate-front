@@ -83,7 +83,7 @@
 <!--            NOME-->
 
             <ng-container matColumnDef="nome">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
                                *matHeaderCellDef> {{ 'LABEL_NOME' | i18n}} </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
                         *matCellDef="let element">
@@ -98,28 +98,8 @@
               </mat-cell>
             </ng-container>
 
-<!--            NUMERO-->
-
-<!--            <ng-container matColumnDef="numero">-->
-<!--              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"-->
-<!--                               *matHeaderCellDef> {{ 'LABEL_NUMERO' | i18n}} </mat-header-cell>-->
-<!--              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"-->
-<!--                        *matCellDef="let element">-->
-<!--                <div fxFlex fxLayout="row">-->
-<!--                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1">-->
-<!--                    <span class="mat-body-strong">{{ 'LABEL_NUMERO' | i18n}} :</span>-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    {{element.numero}}-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </mat-cell>-->
-<!--            </ng-container>-->
-
-<!--            TIPO OVO-->
-
             <ng-container matColumnDef="tipoOvo">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
                                *matHeaderCellDef> {{ 'LABEL_TIPO_OVO' | i18n}} </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
                         *matCellDef="let element">
@@ -137,7 +117,7 @@
 <!--            TAMANHO-->
 
             <ng-container matColumnDef="tamanho">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
                                *matHeaderCellDef> {{ 'LABEL_TAMANHO' | i18n}} </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
                         *matCellDef="let element">
@@ -152,72 +132,10 @@
               </mat-cell>
             </ng-container>
 
-<!--            SABORES-->
-
-<!--            <ng-container matColumnDef="sabores">-->
-<!--              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"-->
-<!--                               *matHeaderCellDef> {{ 'LABEL_SABORES' | i18n}} </mat-header-cell>-->
-<!--              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"-->
-<!--                        *matCellDef="let element">-->
-<!--                <div fxFlex fxLayout="row">-->
-<!--                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1">-->
-<!--                    <span class="mat-body-strong">{{ 'LABEL_SABORES' | i18n}} :</span>-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    {{element.nomeSaborUm}} - {{element.nomeSaborDois}} - -->
-<!--                    {{element.nomeSaborTres}} - {{element.nomeSaborQuatro}} - -->
-<!--                    {{element.nomeSaborCinco}}-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </mat-cell>-->
-<!--            </ng-container>-->
-
-<!--            ENTREGAR-->
-
-<!--            <ng-container matColumnDef="entregar">-->
-<!--              <mat-header-cell fxFlex.gt-sm="100px" class="style-header" fxLayoutAlign="center center"-->
-<!--                               *matHeaderCellDef>{{ 'LABEL_ENTREGAR' | i18n}}  </mat-header-cell>-->
-<!--              <mat-cell fxFlex.gt-sm="100px" fxFlex.lt-sm="100" ngClass.gt-sm="style-column"-->
-<!--                        fxLayoutAlign="center center" *matCellDef="let element">-->
-<!--                <div fxFlex fxLayout="row">-->
-<!--                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center">-->
-<!--                    <span class="mat-body-strong">{{ 'LABEL_ENTREGAR' | i18n}}? :</span>-->
-<!--                  </div>-->
-<!--                  <div fxFlex fxLayoutAlign.gt-xs="center center" fxLayoutAlign.lt-sm="start center"-->
-<!--                       fxLayoutGap.lt-sm="1">-->
-<!--                    <mat-slide-toggle [(ngModel)]="element.entregar" (change)="alterarStatusEntega(element)"-->
-<!--                                      title="{{ (element.entregar ? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}">-->
-<!--                    </mat-slide-toggle>-->
-<!--                    <span>-->
-<!--                                    {{(element.entregar ? 'LABEL_SIM' : 'LABEL_NAO') | i18n}}-->
-<!--                                </span>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </mat-cell>-->
-<!--            </ng-container>-->
-
-<!--            ENDEREÇO-->
-
-<!--            <ng-container matColumnDef="endereco">-->
-<!--              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"-->
-<!--                               *matHeaderCellDef> {{ 'LABEL_ENDERECO' | i18n}} </mat-header-cell>-->
-<!--              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"-->
-<!--                        *matCellDef="let element">-->
-<!--                <div fxFlex fxLayout="row">-->
-<!--                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1">-->
-<!--                    <span class="mat-body-strong">{{ 'LABEL_ENDERECO' | i18n}} :</span>-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    {{element.endereco}}-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </mat-cell>-->
-<!--            </ng-container>-->
-
 <!--            DATA ENTREGA-->
 
             <ng-container matColumnDef="dataEntrega">
-              <mat-header-cell fxFlex="15" class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+              <mat-header-cell fxFlex="15" class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
                                *matHeaderCellDef> {{ 'LABEL_DATA_ENTREGA' | i18n}} </mat-header-cell>
               <mat-cell fxFlex="15" fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
                         *matCellDef="let element">
@@ -233,28 +151,10 @@
               </mat-cell>
             </ng-container>
 
-<!--            PREÇO-->
-
-<!--            <ng-container matColumnDef="preco">-->
-<!--              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"-->
-<!--                               *matHeaderCellDef> {{ 'LABEL_PRECO' | i18n}} </mat-header-cell>-->
-<!--              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"-->
-<!--                        *matCellDef="let element">-->
-<!--                <div fxFlex fxLayout="row">-->
-<!--                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1">-->
-<!--                    <span class="mat-body-strong">{{ 'LABEL_PRECO' | i18n}} :</span>-->
-<!--                  </div>-->
-<!--                  <div>-->
-<!--                    {{element.preco}}-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </mat-cell>-->
-<!--            </ng-container>-->
-
 <!--            OBSERVACAO-->
 
             <ng-container matColumnDef="observacao">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
                                *matHeaderCellDef> {{ 'LABEL_OBSERVACAO' | i18n}} </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
                         *matCellDef="let element">
@@ -272,7 +172,7 @@
 <!--            ATIVO-->
 
             <ng-container matColumnDef="ativo">
-              <mat-header-cell fxFlex.gt-sm="100px" class="style-header" fxLayoutAlign="center center"
+              <mat-header-cell fxFlex.gt-sm="100px" class="style-header" fxLayoutAlign="right center"
                                *matHeaderCellDef>{{ 'LABEL_ATIVO' | i18n}}  </mat-header-cell>
               <mat-cell fxFlex.gt-sm="100px" fxFlex.lt-sm="100" ngClass.gt-sm="style-column"
                         fxLayoutAlign="center center" *matCellDef="let element">
@@ -285,16 +185,13 @@
                     <mat-slide-toggle [(ngModel)]="element.ativo" (change)="alterarStatusPedido(element)"
                                       title="{{ (element.ativo=='LABEL_SIM_M' ? 'LABEL_SIM_M' : 'LABEL_NAO_M') | i18n }}">
                     </mat-slide-toggle>
-<!--                    <span>-->
-<!--                                    {{(element.ativo=='LABEL_SIM_M' ? 'LABEL_SIM_M' : 'LABEL_NAO_M') | i18n}}-->
-<!--                                </span>-->
                   </div>
                 </div>
               </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="acoes">
-              <mat-header-cell fxFlex.gt-sm="100px" class="style-header f" fxLayoutAlign="center center"
+              <mat-header-cell fxFlex.gt-sm="100px" class="style-header f" fxLayoutAlign="right center"
                                *matHeaderCellDef> {{ 'LABEL_ACOES' | i18n}} </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" fxLayoutAlign="center center" fxFlex.gt-sm="150px"
                         *matCellDef="let element">
@@ -303,21 +200,19 @@
                     <span class="mat-body-strong">{{ 'LABEL_ACOES' | i18n}} :</span>
                   </div>
                   <div fxLayout="row" fxLayoutAlign="center center">
-                    <a mat-mini-fab title="{{'LABEL_VISUALIZAR_AMIGO' | i18n}}" class="btn-primary"
-                       *ngIf="securityService.hasRoles('ROLE_AMIGO_VISUALIZAR')"
+                    <a mat-mini-fab title="{{'LABEL_VISUALIZAR_PEDIDO' | i18n}}" class="btn-primary"
                        [routerLink]="['/administracao/pedido', element.id, 'visualizar']">
                       <mat-icon>search</mat-icon>
                     </a>
 
-                    <a mat-mini-fab title="{{'LABEL_ALTERAR_AMIGO' | i18n}}" class="btn-primary"
-                       *ngIf="securityService.hasRoles('ROLE_AMIGO_ALTERAR')"
+                    <a mat-mini-fab title="{{'LABEL_ALTERAR_PEDIDO' | i18n}}" color="#eeeeee"
                        [routerLink]="['/administracao/pedido', element.id, 'alterar']">
                       <mat-icon>edit</mat-icon>
                     </a>
 
-                    <a mat-mini-fab title="{{'LABEL_REMOVER_AMIGO' | i18n}}" class="btn-primary"
+                    <a mat-mini-fab title="{{'LABEL_REMOVER_PEDIDO' | i18n}}" color="warn"
                        (click)="remover(element)">
-                      <mat-icon>close</mat-icon>
+                      <mat-icon>delete</mat-icon>
                     </a>
                   </div>
                 </div>

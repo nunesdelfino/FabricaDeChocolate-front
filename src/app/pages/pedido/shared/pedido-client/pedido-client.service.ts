@@ -3,7 +3,6 @@ import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../../environments/environment';
-import {FiltroAmigoDTO} from '../../../../shared/dto/filtro-amigo.dto';
 import {FiltroPedidoDTO} from "../../../../shared/dto/filtro-pedido.dto";
 
 /**

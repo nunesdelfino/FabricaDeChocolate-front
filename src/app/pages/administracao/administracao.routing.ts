@@ -58,12 +58,6 @@ export const AdministracaoRoutes: Routes = [
         path: 'usuario', loadChildren: () => import('./../usuario/usuario.module').then(m => m.UsuarioModule)
       },
       {
-        path: 'tipo-amigo', loadChildren: () => import('../tipo-amigo/tipo-amigo.module').then(m => m.TipoAmigoModule)
-      },
-      {
-        path: 'amigo', loadChildren: () => import('../amigo/amigo.module').then(m => m.AmigoModule)
-      },
-      {
         path: 'sabor', loadChildren: () => import('../sabor/sabor.module').then(m => m.SaborModule)
       },
       {

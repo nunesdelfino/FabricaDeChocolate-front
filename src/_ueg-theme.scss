@@ -24,10 +24,12 @@ $custom-typography: mat-typography-config(
 
 //$primary: mat-palette($mat-deep-purple);
 $primary: mat-palette($mat-blue,600);
+//$primary: #150909;
 //#0a8396
 //02a2bb
 //$accent: mat-palette($mat-green);
 $accent: mat-palette($mat-blue,800);
+//$accent: #150909;
 
 $app-theme: mat-light-theme($primary, $accent);
 
@@ -36,6 +38,7 @@ $ueg-color-dark: #000445;
 $ueg-color-light: #1C347E;
 //$theme-background: radial-gradient( circle,$ueg-color-light, $ueg-color-dark);
 $theme-background: radial-gradient( circle,mat-color($primary,800), mat-color($primary,900));
+//$theme-background: radial-gradient( circle,#150909, #150909);
 $theme-background-solid: #eee;
 
 
