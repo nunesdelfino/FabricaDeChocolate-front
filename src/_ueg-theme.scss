@@ -1,9 +1,6 @@
 @import '~@angular/material/theming';
 @import 'variables';
-
-
-
-
+@import 'paleta';
 
 @include mat-core();
 
@@ -23,19 +20,19 @@ $custom-typography: mat-typography-config(
 @include mat-core($custom-typography);
 
 //$primary: mat-palette($mat-deep-purple);
-$primary: mat-palette($mat-blue,600);
+$primary: mat-palette($md-mcgpalette0,900);
 //$primary: #150909;
 //#0a8396
 //02a2bb
 //$accent: mat-palette($mat-green);
-$accent: mat-palette($mat-blue,800);
+$accent: mat-palette($md-mcgpalette0,800);
 //$accent: #150909;
 
 $app-theme: mat-light-theme($primary, $accent);
 
 
-$ueg-color-dark: #000445;
-$ueg-color-light: #1C347E;
+$ueg-color-dark: #150909;
+$ueg-color-light: #150909;
 //$theme-background: radial-gradient( circle,$ueg-color-light, $ueg-color-dark);
 $theme-background: radial-gradient( circle,mat-color($primary,800), mat-color($primary,900));
 //$theme-background: radial-gradient( circle,#150909, #150909);
