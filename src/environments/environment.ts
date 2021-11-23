@@ -4,5 +4,5 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://192.168.0.113:8081/modelo-api/api/v1'
+  urlApi: 'http://localhost:8081/modelo-api/api/v1'
 };
