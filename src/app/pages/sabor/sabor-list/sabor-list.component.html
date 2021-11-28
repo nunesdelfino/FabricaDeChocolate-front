@@ -19,7 +19,7 @@
         <mat-form-field fxFlex fxFlex.gt-xs="70" fxFlex.lt-sm="100">
           <mat-label>{{'LABEL_NOME' | i18n}}</mat-label>
           <input matInput placeholder="{{'LABEL_SABOR_HINT' | i18n}}" title="{{'LABEL_NOME' | i18n}}"
-                 [(ngModel)]="filtroDTO.tamanho" maxlength="100">
+                 [(ngModel)]="filtroDTO.sabor" maxlength="100">
         </mat-form-field>
       </div>
 
@@ -59,7 +59,7 @@
                   <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1">
                     <span class="mat-body-strong">{{ 'LABEL_SABOR' | i18n}} :</span>
                   </div>
-                  <div>
+                  <div class="espaco-linha"><!--linha do conteudo-->
                     {{element.sabor}}
                   </div>
 
