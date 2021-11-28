@@ -9,7 +9,7 @@ import {SecurityService} from '../../shared/security/security.service';
 /**
  * Implementação de 'Guard' responsável por permitir acesso a interface de login caso não exista Usuário logado.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Injectable()
 export class AutenticacaoGuard implements CanActivate {

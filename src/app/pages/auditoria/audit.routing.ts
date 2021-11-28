@@ -8,7 +8,7 @@ import {AuditoriaResolve} from './shared/auditoria.resolve';
 /**
  * Configurações de rota de Grupo.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export const AuditoriaRoutes: Routes = [
   {

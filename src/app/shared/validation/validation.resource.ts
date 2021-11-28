@@ -2,7 +2,7 @@
 /**
  * Interface Provider responsável por permitir a centralização de mensagem de validação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export interface ValidationResource {
 
@@ -18,7 +18,7 @@ export interface ValidationResource {
 /**
  * Interface 'Provider' responsável por prover instâncias de 'ValidationResource'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export interface ValidationResourceProvider {
 
@@ -31,6 +31,6 @@ export interface ValidationResourceProvider {
 /**
  * Classe 'Provider' responsável por prover instâncias de 'ValidationResource'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export class ValidationResourceProvider implements ValidationResourceProvider { }

@@ -9,12 +9,6 @@ import {MessageModule} from '../../shared/message/message.module';
 import {AdministracaoComponent} from './administracao.component';
 
 
-
-/**
- * Módulo responsável por prover o template padrão das interfaces principais.
- *
- * @author Guiliano Rangel (UEG)
- */
 @NgModule({
   imports: [
     CommonModule,

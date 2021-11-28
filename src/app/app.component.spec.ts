@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'template-ueg'`, () => {
+  it(`should have as title 'template-fabrica'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('template-ueg');
+    expect(app.title).toEqual('template-fabrica');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('template-ueg app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('template-fabrica app is running!');
   });
 });

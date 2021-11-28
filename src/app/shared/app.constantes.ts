@@ -17,12 +17,6 @@ export const FX_FLEX_GT_LG = '1200px';
 export const FX_FLEX_XL = '1280PX';
 export const PAGINATOR_PAGE_SIZE = 5;
 
-
-/**
- * Classe que disponibiliza as constantes de Status na aplicação.
- *
- * @author Guiliano Rangel (UEG)
- */
 export class StatusAtivoInativo {
 
   public static readonly ATIVO: StatusAtivoInativo = new StatusAtivoInativo(true, 'Ativo');
@@ -42,10 +36,55 @@ export class StatusAtivoInativo {
 }
 
 /**
- * Classe que disponibiliza as constantes de Status SimNao na aplicação.
+=======
+ * Classe que disponibiliza as constantes de Status Pedido na aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes
  */
+export class StatusPedido {
+
+  public static readonly PENDENTE: StatusPedido = new StatusPedido('pendente', 'Pendente');
+
+  public static readonly ACEITO: StatusPedido = new StatusPedido('aceito', 'Aceito');
+
+  public static readonly CANCELADO: StatusPedido = new StatusPedido('cancelado', 'Cancelado');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
+
+/**
+ * Classe que disponibiliza as constantes de Status Pedido na aplicação.
+ *
+ * @author Gabriel Nunes
+ */
+export class TipoOvo {
+
+  public static readonly COLHER: TipoOvo = new TipoOvo('colher', 'Colher');
+
+  public static readonly SIMPLES: TipoOvo = new TipoOvo('simples', 'Simples');
+
+  public static readonly TRUFADO: TipoOvo = new TipoOvo('trufado', 'Trufado');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
 export class StatusSimNao {
 
   public static readonly SIM: StatusSimNao = new StatusSimNao('S', 'Sim');
@@ -64,11 +103,6 @@ export class StatusSimNao {
   ) {}
 }
 
-/**
- * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
- *
- * @author Guiliano Rangel (UEG)
- */
 export class TipoUsuario {
 
   public static readonly SERVIDOR_INTERNO: TipoUsuario = new TipoUsuario('S', 'Servidor Interno');
@@ -85,11 +119,7 @@ export class TipoUsuario {
   ) {}
 }
 
-/**
- * Classe que disponibiliza as constantes de Tipos de Telefone na aplicação.
- *
- * @author Guiliano Rangel (UEG)
- */
+
 export class TipoTelefone {
 
   public static readonly CELULAR: TipoTelefone = new TipoTelefone('1', 'Celular');
@@ -108,11 +138,6 @@ export class TipoTelefone {
   ) {}
 }
 
-/**
- * Classe que disponibiliza as constantes de Tipos de Revisão na aplicação.
- *
- * @author Guiliano Rangel (UEG)
- */
 export class TipoRevisao {
 
   public static readonly INCLUSAO: TipoRevisao = new TipoRevisao(0, 'Inclusão');

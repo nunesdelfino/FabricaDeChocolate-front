@@ -9,7 +9,7 @@ import {ModuloClientResolve} from '../../shared/services/modulo-client/modulo-cl
 /**
  * Configurações de rota de Grupo.
  *
- * @author Guiliano Rangel (UEG)
+ *@author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export const GrupoRoutes: Routes = [
   {

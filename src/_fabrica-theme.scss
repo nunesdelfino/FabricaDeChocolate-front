@@ -34,9 +34,15 @@ $accent: mat-palette($mat-blue,800);
 $app-theme: mat-light-theme($primary, $accent);
 
 
+<<<<<<< Updated upstream:src/_ueg-theme.scss
 $ueg-color-dark: #000445;
 $ueg-color-light: #1C347E;
 //$theme-background: radial-gradient( circle,$ueg-color-light, $ueg-color-dark);
+=======
+$fabrica-color-dark: #150909;
+$fabrica-color-light: #150909;
+//$theme-background: radial-gradient( circle,$fabrica-color-light, $fabrica-color-dark);
+>>>>>>> Stashed changes:src/_fabrica-theme.scss
 $theme-background: radial-gradient( circle,mat-color($primary,800), mat-color($primary,900));
 //$theme-background: radial-gradient( circle,#150909, #150909);
 $theme-background-solid: #eee;

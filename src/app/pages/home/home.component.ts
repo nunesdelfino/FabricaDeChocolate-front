@@ -11,7 +11,7 @@ import {MNEMONICO_PORTAL} from '../../shared/app.constantes';
 /**
  * Componente responsável pela listagem do 'Painel de Sistemas'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'app-home',

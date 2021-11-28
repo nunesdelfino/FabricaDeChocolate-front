@@ -13,7 +13,7 @@ import { AbstractComponent } from '../../../shared/component/Abstract.component'
 /**
  * Componente de formulário de Telefone do Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'app-usuario-telefone-form',

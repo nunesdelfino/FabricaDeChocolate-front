@@ -9,11 +9,6 @@ import {AcaoSistema} from '../../../shared/component/acao-sistema.acao';
 import {SecurityService} from '../../../shared/security/security.service';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
 
-/**
- * Componente de formulário de Amigo.
- *
- * @author Guiliano Rangel (UEG)
- */
 @Component({
   selector: 'app-amigo-form',
   templateUrl: './pedido-form.component.html',

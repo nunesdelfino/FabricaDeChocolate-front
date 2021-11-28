@@ -4,7 +4,7 @@ import { HttpParams } from '@angular/common/http';
 /**
  * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa de Amigo.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export class FiltroPedidoDTO {
 
@@ -31,7 +31,7 @@ export class FiltroPedidoDTO {
     public nome?: string,
     public idTamanho?: number,
     public dataEntrega?: string,
-    public ativo?: boolean,
+    public status?: string,
     public idSaborUm?: number,
     public idSaborDois?: number,
     public idSaborTres?: number,
@@ -79,8 +79,8 @@ export class FiltroPedidoDTO {
       params = params.append('dataEntrega', this.dataEntrega );
     }
 
-    if (this.ativo) {
-      params = params.append('ativo', this.ativo ? 'true' : 'false');
+    if (this.status) {
+      params = params.append('status', String(this.status));
     }
 
     if (this.idSaborUm) {

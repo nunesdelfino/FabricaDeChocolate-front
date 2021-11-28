@@ -3,7 +3,7 @@ import { MatPaginatorIntl } from '@angular/material';
 import { MessageService } from './message.service';
 
 /**
- * @author Guiliano Rangel (UEG)
+ *@author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export class PaginatorIntl extends MatPaginatorIntl {
 

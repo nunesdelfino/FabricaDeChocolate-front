@@ -14,7 +14,7 @@ import {FiltroPedidoDTO} from "../../../shared/dto/filtro-pedido.dto";
 /**
  * Componente de listagem de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ *@author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'app-usuario-list',
@@ -33,7 +33,7 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
 
   public dataEntrega: Date = null;
 
-  public displayedColumns = ['nome', 'tipoOvo', 'tamanho', 'dataEntrega', 'observacao', 'ativo', 'acoes'];
+  public displayedColumns = ['nome', 'tipoOvo', 'tamanho', 'dataEntrega', 'observacao', 'status', 'acoes'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
@@ -91,19 +91,6 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
   public limpar(): void {
     this.filtroDTO = FiltroPedidoDTO.getInstace();
     this.dataSource.data = [];
-  }
-
-  /**
-   * Altera o status do pedido informado.
-   *
-   * @param pedido
-   */
-  public alterarStatusPedido(pedido: any): void {
-    if (pedido.ativo) {
-      this.ativaPedido(pedido);
-    } else {
-      this.desativarPedido(pedido);
-    }
   }
 
   /**

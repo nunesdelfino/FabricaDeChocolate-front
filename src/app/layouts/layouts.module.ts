@@ -17,7 +17,7 @@ import {LoaderDialogComponent} from './loader-dialog/loader-dialog.component';
 import {MaterialModule} from './material.module';
 
 /**
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @NgModule({
   declarations: [

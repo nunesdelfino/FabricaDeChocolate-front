@@ -9,7 +9,7 @@ import {ModuloClientService} from './modulo-client.service';
 /**
  * Classe resolve responsável pela lista dos Sistemas que o Usuário Logado possui acesso.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Injectable()
 export class ModuloClientResolve implements Resolve<any> {

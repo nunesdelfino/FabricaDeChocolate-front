@@ -12,7 +12,7 @@ import {MaterialModule} from '../../layouts/material.module';
 /**
  * Módulo responsável por prover recursos de 'mensagens' e 'i18n'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @NgModule({
   entryComponents: [ConfirmDialogComponent],

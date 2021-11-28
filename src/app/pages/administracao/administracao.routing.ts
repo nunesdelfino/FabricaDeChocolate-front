@@ -3,11 +3,6 @@ import {SecurityGuard} from '../../shared/security/security.guard';
 import {AdministracaoComponent} from './administracao.component';
 import {LayoutComponent} from '../../layouts/layout.component';
 
-/**
- * Configuração de 'Rotas' do módulo 'Home'.
- *
- * @author Guiliano Rangel (UEG)
- */
 export const AdministracaoRoutes: Routes = [
   {
     path: 'administracao',

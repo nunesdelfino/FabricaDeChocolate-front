@@ -10,7 +10,7 @@ import {FiltroTamanhoDTO} from "../../../../shared/dto/filtro-tamanho.dto";
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Injectable()
 export class TamanhoListResolve implements Resolve<any> {

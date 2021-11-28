@@ -10,7 +10,7 @@ import {AbstractComponent} from '../../shared/component/Abstract.component';
 /**
  * Componente header.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'app-header',

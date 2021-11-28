@@ -14,7 +14,7 @@ export enum Acao {
 /**
  * Classe de controle 'Ação'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export class AcaoSistema {
 

@@ -1,10 +1,5 @@
 import {InternacionalizacaoResource} from './shared/message/internacionalizacao.resource';
 
-/**
- * Implementação responsável por prover as 'descrições' e 'mensagens' utilizadas na aplicação em um único local.
- *
- * @author Guiliano Rangel (UEG)
- */
 export class AppMessage implements InternacionalizacaoResource {
 
   private resource: object;

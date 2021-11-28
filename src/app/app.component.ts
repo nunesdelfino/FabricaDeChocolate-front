@@ -16,7 +16,7 @@ import {config, IConfig} from './shared/security/config';
 /**
  * Componente principal da aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'app-root',

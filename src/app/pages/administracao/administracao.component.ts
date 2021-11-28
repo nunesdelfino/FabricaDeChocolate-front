@@ -8,7 +8,7 @@ import {SecurityService} from '../../shared/security/security.service';
 /**
  * Implementação do component 'Admin' responsável por prover o template padrão da aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'administracao',

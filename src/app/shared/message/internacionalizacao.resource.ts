@@ -2,7 +2,7 @@
 /**
  * Interface provider responsável por permitir a centralização de 'descrições/mensagens' utilizadas na aplicação em um unico local.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export interface InternacionalizacaoResource {
 
@@ -18,7 +18,7 @@ export interface InternacionalizacaoResource {
 /**
  * Interface 'Provider' responsável por prover instâncias de 'InternacionalizacaoResource'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export interface InternacionalizacaoResourceProvider {
 
@@ -31,6 +31,6 @@ export interface InternacionalizacaoResourceProvider {
 /**
  * Classe 'Provider' responsável por prover instâncias de 'InternacionalizacaoResource'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export class InternacionalizacaoResourceProvider implements InternacionalizacaoResourceProvider { }

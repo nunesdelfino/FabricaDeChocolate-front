@@ -14,7 +14,7 @@ import {SecurityService} from '../../../shared/security/security.service';
 /**
  * Componente de formulário de Grupo.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 @Component({
   selector: 'app-grupo-form',

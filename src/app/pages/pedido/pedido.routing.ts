@@ -10,7 +10,7 @@ import {TamanhoListResolve} from "../tamanho/shared/tamanho-client/tamanho-list-
 /**
  * Configurações de rota de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel N Delfino; Maria E F Oliveira; Karen D Antunes
  */
 export const PedidoRoutes: Routes = [
   {
