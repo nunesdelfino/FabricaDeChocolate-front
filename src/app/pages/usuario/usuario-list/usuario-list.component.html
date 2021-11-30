@@ -6,8 +6,7 @@
     </div>
     <div fxFlex fxLayoutAlign="end center">
       <button class="mat-button mat-raised-button mat-accent mat-button-base"
-              title="{{'LABEL_ADICIONAR_NOVO' | i18n}}" routerLink="/administracao/usuario/incluir"
-              *ngIf="securityService.hasRoles('ROLE_USUARIO_INCLUIR')">
+              title="{{'LABEL_ADICIONAR_NOVO' | i18n}}" routerLink="/administracao/usuario/incluir">
         {{'LABEL_ADICIONAR_NOVO' | i18n}}
       </button>
     </div>
@@ -101,46 +100,6 @@
               </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="ultimoAcesso">
-              <mat-header-cell fxFlex="15" class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
-                               *matHeaderCellDef> {{ 'LABEL_DATA_ULTIMO_ACESSO' | i18n}} </mat-header-cell>
-              <mat-cell fxFlex="15" fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
-                        *matCellDef="let element">
-                <div fxFlex fxLayout="row">
-                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center">
-                    <span class="mat-body-strong text-right">{{ 'LABEL_DATA_ULTIMO_ACESSO' | i18n}} :</span>
-                  </div>
-                  <div fxFlex fxLayoutAlign.gt-xs="center center" fxLayoutAlign.lt-sm="start center"
-                       fxLayoutGap.lt-sm="1">
-                    {{element.ultimoAcesso | date: 'dd/MM/yyyy'}}
-                  </div>
-                </div>
-              </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="statusPortal">
-              <mat-header-cell fxFlex.gt-sm="100px" class="style-header" fxLayoutAlign="center center"
-                               *matHeaderCellDef>{{ 'LABEL_STATUS_PORTAL' | i18n}}  </mat-header-cell>
-              <mat-cell fxFlex.gt-sm="100px" fxFlex.lt-sm="100" ngClass.gt-sm="style-column"
-                        fxLayoutAlign="center center" *matCellDef="let element">
-                <div fxFlex fxLayout="row">
-                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center">
-                    <span class="mat-body-strong">{{ 'LABEL_STATUS_PORTAL' | i18n}} :</span>
-                  </div>
-                  <div fxFlex fxLayoutAlign.gt-xs="center center" fxLayoutAlign.lt-sm="start center"
-                       fxLayoutGap.lt-sm="1">
-                    <mat-slide-toggle [(ngModel)]="element.status" (change)="alterarStatusUsuario(element)"
-                                      title="{{ (element.status ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}"
-                                      *ngIf="securityService.hasRoles('ROLE_USUARIO_ATIVAR_INATIVAR')">
-                    </mat-slide-toggle>
-                    <span *ngIf="!securityService.hasRoles('ROLE_USUARIO_ATIVAR_INATIVAR')">
-                                    {{(element.status ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n}}
-                                </span>
-                  </div>
-                </div>
-              </mat-cell>
-            </ng-container>
-
             <ng-container matColumnDef="acoes">
               <mat-header-cell fxFlex.gt-sm="100px" class="style-header f" fxLayoutAlign="center center"
                                *matHeaderCellDef> {{ 'LABEL_ACOES' | i18n}} </mat-header-cell>
@@ -152,13 +111,11 @@
                   </div>
                   <div fxLayout="row" fxLayoutAlign="center center">
                     <a mat-mini-fab title="{{'LABEL_VISUALIZAR_USUARIO' | i18n}}" class="btn-primary"
-                       *ngIf="securityService.hasRoles('ROLE_USUARIO_VISUALIZAR')"
                        [routerLink]="['/administracao/usuario', element.id, 'visualizar']">
                       <mat-icon>search</mat-icon>
                     </a>
 
                     <a mat-mini-fab title="{{'LABEL_ALTERAR_USUARIO' | i18n}}" class="btn-primary"
-                       *ngIf="securityService.hasRoles('ROLE_USUARIO_ALTERAR')"
                        [routerLink]="['/administracao/usuario', element.id, 'alterar']">
                       <mat-icon>edit</mat-icon>
                     </a>

@@ -28,7 +28,7 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
 
   public tiposCadastro: any[];
 
-  public displayedColumns = ['login', 'nome', 'ultimoAcesso', 'statusPortal', 'acoes'];
+  public displayedColumns = ['login', 'nome', 'acoes'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 

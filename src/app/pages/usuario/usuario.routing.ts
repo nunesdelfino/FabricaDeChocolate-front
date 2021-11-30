@@ -19,11 +19,11 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'incluir',
-      security: {
-        roles: [
-          'ROLE_USUARIO_INCLUIR'
-        ]
-      }
+      // security: {
+      //   roles: [
+      //     'ROLE_USUARIO_INCLUIR'
+      //   ]
+      // }
     },
     resolve: {
       // sistemas: SistemaAtivoResolve
@@ -36,11 +36,11 @@ export const UsuarioRoutes: Routes = [
       SecurityGuard
     ],
     data: {
-      security: {
-        roles: [
-          'ROLE_USUARIO_PESQUISAR'
-        ]
-      }
+      // security: {
+      //   roles: [
+      //     'ROLE_USUARIO_PESQUISAR'
+      //   ]
+      // }
     }
   },
   {
@@ -51,11 +51,11 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'alterar',
-      security: {
-        roles: [
-          'ROLE_USUARIO_ALTERAR'
-        ]
-      }
+      // security: {
+      //   roles: [
+      //     'ROLE_USUARIO_ALTERAR'
+      //   ]
+      // }
     },
     resolve: {
       usuario: UsuarioResolve,
@@ -70,11 +70,11 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'visualizar',
-      security: {
-        roles: [
-          'ROLE_USUARIO_VISUALIZAR'
-        ]
-      }
+      // security: {
+      //   roles: [
+      //     'ROLE_USUARIO_VISUALIZAR'
+      //   ]
+      // }
     },
     resolve: {
       usuario: UsuarioResolve

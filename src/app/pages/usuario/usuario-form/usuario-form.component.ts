@@ -179,10 +179,6 @@ export class UsuarioFormComponent {
     this.submittedUsuario = true;
 
     if (form.valid) {
-      if (this.gruposVinculados.length > 0) {
-        usuario.grupos = this.gruposVinculados;
-        usuario.telefones = this.telefonesUsuario;
-
         this.usuarioClientService.salvar(usuario).subscribe(() => {
           this.router.navigate(['/administracao/usuario']);
           this.messageService.addMsgSuccess('MSG007');
@@ -190,9 +186,6 @@ export class UsuarioFormComponent {
           this.messageService.addMsgDanger(error);
         });
       } else {
-        this.messageService.addMsgSuccess('MSG039');
-      }
-    } else {
       this.messageService.addMsgSuccess('MSG001');
     }
   }

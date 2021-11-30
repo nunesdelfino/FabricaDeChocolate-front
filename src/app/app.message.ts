@@ -152,7 +152,7 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_USUARIO_HINT: 'Digite o nome do usuário',
       LABEL_LOGIN_HINT: 'Digite o login do usuário',
       LABEL_TIPO_CADASTRO: 'Tipo de Cadastro',
-      LABEL_STATUS_PORTAL: 'Status no Portal',
+      LABEL_STATUS_PORTAL: 'Status do Usuário',
       LABEL_DATA_ULTIMO_ACESSO: 'Data do Último Acesso',
       LABEL_EMAIL: 'E-mail',
       LABEL_INFORME_EMAIL: 'Informe o E-mail',

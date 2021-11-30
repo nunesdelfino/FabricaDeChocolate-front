@@ -16,14 +16,12 @@
         <mat-icon>home</mat-icon>
         <span>Home</span>
       </button>
-      <button mat-menu-item [routerLink]="['/administracao/grupo']"
-              *ngIf="securityService.hasRoles(['ROLE_GRUPO_VISUALIZAR', 'ROLE_GRUPO_PESQUISAR'])"
-      >
-        <mat-icon>group</mat-icon>
-        <span>{{ 'LABEL_GRUPO' | i18n}}</span>
-      </button>
+<!--      <button mat-menu-item [routerLink]="['/administracao/grupo']"-->
+<!--      >-->
+<!--        <mat-icon>group</mat-icon>-->
+<!--        <span>{{ 'LABEL_GRUPO' | i18n}}</span>-->
+<!--      </button>-->
       <button mat-menu-item [routerLink]="['/administracao/usuario']"
-              *ngIf="securityService.hasRoles(['ROLE_USUARIO_VISUALIZAR', 'ROLE_USUARIO_PESQUISAR'])"
       >
         <mat-icon>person</mat-icon>
         <span>Usuários</span>
@@ -50,13 +48,11 @@
       <a mat-button [routerLink]="['/administracao']">
         <!--<mat-icon>home</mat-icon>-->
         Home</a>
-      <a mat-button [routerLink]="['/administracao/grupo']"
-         *ngIf="securityService.hasRoles(['ROLE_GRUPO_VISUALIZAR', 'ROLE_GRUPO_PESQUISAR'])"
-      >
-        <!--<mat-icon>group</mat-icon>-->
-        Grupos</a>
+<!--      <a mat-button [routerLink]="['/administracao/grupo']"-->
+<!--      >-->
+<!--        &lt;!&ndash;<mat-icon>group</mat-icon>&ndash;&gt;-->
+<!--        Grupos</a>-->
       <a mat-button [routerLink]="['/administracao/usuario']"
-         *ngIf="securityService.hasRoles(['ROLE_USUARIO_VISUALIZAR', 'ROLE_USUARIO_PESQUISAR'])"
       >
         <!--<mat-icon>person</mat-icon>-->
         Usuários</a>
