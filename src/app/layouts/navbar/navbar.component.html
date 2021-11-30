@@ -29,6 +29,21 @@
         <span>Usuários</span>
       </button>
 
+      <button mat-menu-item [routerLink]="['/administracao/sabor']">
+        <mat-icon>restaurant</mat-icon><!--Tipo icone-->
+        <span>{{ 'LABEL_SABOR' | i18n}}</span>
+      </button>
+
+      <button mat-menu-item [routerLink]="['/administracao/tamanho']">
+        <mat-icon>straighten</mat-icon><!--Tipo icone-->
+        <span>{{ 'LABEL_TAMANHO' | i18n}}</span>
+      </button>
+
+      <button mat-menu-item [routerLink]="['/administracao/pedido']">
+        <mat-icon>room_service</mat-icon><!--Tipo icone-->
+        <span>{{ 'LABEL_PEDIDO' | i18n}}</span>
+      </button>
+
     </mat-menu>
 
     <div fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
