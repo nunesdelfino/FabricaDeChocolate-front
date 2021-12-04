@@ -11,7 +11,7 @@ import {TamanhoClientService} from '../shared/tamanho-client/tamanho-client.serv
 /**
  * Componente de formulário de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Maria E F Oliveira
  */
 @Component({
   selector: 'app-usuario-form',

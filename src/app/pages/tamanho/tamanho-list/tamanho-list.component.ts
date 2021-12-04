@@ -13,7 +13,7 @@ import {FiltroTamanhoDTO} from "../../../shared/dto/filtro-tamanho.dto";
 /**
  * Componente de listagem de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Maria E F Oliveira
  */
 @Component({
   selector: 'app-sabor-list',
