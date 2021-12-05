@@ -106,6 +106,7 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_DADOS_TAMANHO: 'Dados do tamanho',
       LABEL_REMOVER_TAMANHO: 'Remover tamanho',
       LABEL_TAMANHO: 'Tamanho',
+      LABEL_STATUS_TAMANHO: "Status do Tamanho",
 
       // Texto manter Pedido
       LABEL_PESQUISAR_PEDIDO: 'Pesquisar pedido',

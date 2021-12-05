@@ -16,7 +16,7 @@ import {FiltroTamanhoDTO} from "../../../shared/dto/filtro-tamanho.dto";
  * @author Maria E F Oliveira
  */
 @Component({
-  selector: 'app-sabor-list',
+  selector: 'app-tamanho-list',
   templateUrl: './tamanho-list.component.html',
   styleUrls: ['./tamanho-list-component.scss']
 })
@@ -45,8 +45,8 @@ export class TamanhoListComponent extends AbstractComponent implements OnInit {
     private tamanhoClientService: TamanhoClientService
   ) {
     super();
-    const sabores = route.snapshot.data.tamanhos;
-    this.dataSource = new MatTableDataSource<any>(sabores);
+    const tamanhos = route.snapshot.data.tamanhos;
+    this.dataSource = new MatTableDataSource<any>(tamanhos);
   }
 
   /**
@@ -81,13 +81,13 @@ export class TamanhoListComponent extends AbstractComponent implements OnInit {
   }
 
   /**
-   * Altera o status do Sabor informado.
+   * Altera o status do Tamanho informado.
    *
    * @param tamanho
    */
   public alterarStatusTamanho(tamanho: any): void {
-    console.log(tamanho.tamanho);
-    if (tamanho.tamanho) {
+    console.log('alterastatus:', tamanho);
+    if (tamanho.ativo) { //verificar se .tamanho na verdade eh .ativo
       this.ativarTamanho(tamanho);
     } else {
       this.desativarTamanho(tamanho);
@@ -106,18 +106,18 @@ export class TamanhoListComponent extends AbstractComponent implements OnInit {
         this.pesquisar(this.filtroDTO);
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
-        tamanho.ativo = false;
+        tamanho.ativo = false; //tamanho.tamanho antes
         this.messageService.addMsgDanger(error);
       });
     }, () => {
-      tamanho.ativo = false;
+      tamanho.ativo = false; //tamanho.tamanho
     });
   }
 
   /**
    * Deixar de ser Amigo do cadastro informado.
    *
-   * @param sabor
+   * @param tamanho
    */
   private desativarTamanho(tamanho: any): void {
     this.messageService.addConfirmYesNo('MSG054', () => {
@@ -125,11 +125,11 @@ export class TamanhoListComponent extends AbstractComponent implements OnInit {
         this.pesquisar(this.filtroDTO);
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
-        tamanho.ativo = true;
+        tamanho.ativo = true; //tamanho.tamanho
         this.messageService.addMsgDanger(error);
       });
     }, () => {
-      tamanho.ativo = true;
+      tamanho.ativo = true; //tamanho.tamanho
     });
   }
 
