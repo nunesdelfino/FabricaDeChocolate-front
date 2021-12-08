@@ -50,7 +50,9 @@ export class StatusPedido {
 
   public static readonly PENDENTE: StatusPedido = new StatusPedido('pendente', 'Pendente');
 
-  public static readonly ACEITO: StatusPedido = new StatusPedido('aceito', 'Aceito');
+  public static readonly ACEITOPG: StatusPedido = new StatusPedido('aceitopg', 'Aceito - Pagamento Realizado');
+
+  public static readonly ACEITONPG: StatusPedido = new StatusPedido('aceitonpg', 'Aceito - Pagamento Pendente');
 
   public static readonly CANCELADO: StatusPedido = new StatusPedido('cancelado', 'Cancelado');
 

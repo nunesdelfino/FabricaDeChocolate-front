@@ -24,6 +24,7 @@ export class AbstractComponent {
   public listStatusAtivosInativos: Array<StatusAtivoInativo>;
   public listStatusSimNao: Array<StatusSimNao>;
   public listStatusPedido: Array<StatusPedido>;
+  public listStatusPedidoAceito: Array<StatusPedido>;
   public listTipoOvo: Array<TipoOvo>;
   public listTiposUsuarios: Array<TipoUsuario>;
   public listTiposTelefones: Array<TipoTelefone>;
@@ -36,6 +37,7 @@ export class AbstractComponent {
     this.initListTiposRevisoes();
     this.initListStatusSimNao();
     this.initListStatusPedido();
+    this.initListStatusPedidoAceito();
     this.initListTipoOvo();
   }
 
@@ -44,9 +46,19 @@ export class AbstractComponent {
    */
   private initListStatusPedido(){
     this.listStatusPedido = [];
-    this.listStatusPedido.push(StatusPedido.ACEITO);
+    this.listStatusPedido.push(StatusPedido.ACEITOPG);
+    this.listStatusPedido.push(StatusPedido.ACEITONPG);
     this.listStatusPedido.push(StatusPedido.CANCELADO);
     this.listStatusPedido.push(StatusPedido.PENDENTE);
+  }
+
+  /**
+   * Inicializa lista Status Pedido
+   */
+  private initListStatusPedidoAceito(){
+    this.listStatusPedidoAceito = [];
+    this.listStatusPedidoAceito.push(StatusPedido.CANCELADO);
+    this.listStatusPedidoAceito.push(StatusPedido.ACEITOPG);
   }
 
   /**

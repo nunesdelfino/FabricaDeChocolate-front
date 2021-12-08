@@ -56,7 +56,7 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
     this.tamanhos = route.snapshot.data.tamanho;
     this.sabores = route.snapshot.data.sabores;
     this.dataSource = new MatTableDataSource<any>(pedidos);
-    console.log(pedidos);
+
   }
 
   /**
