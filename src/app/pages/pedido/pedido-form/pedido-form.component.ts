@@ -9,6 +9,7 @@ import {AcaoSistema} from '../../../shared/component/acao-sistema.acao';
 import {SecurityService} from '../../../shared/security/security.service';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
 import {AbstractComponent} from '../../../shared/component/Abstract.component';
+import {StatusPedido} from "../../../shared/app.constantes";
 
 /**
  * Componente de formulário de Amigo.
@@ -165,7 +166,7 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
   }
 
   public statusPedidoPagoCancelado(p): boolean{
-    if(p.status=="aceitopg" || p.status=="cancelado"){
+    if(p.status==StatusPedido.ACEITOPG || p.status=="cancelado"){
       return true;
     } else {
       return false;

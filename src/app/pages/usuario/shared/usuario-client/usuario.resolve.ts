@@ -5,6 +5,7 @@ import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
 
 import { MessageService } from 'src/app/shared/message/message.service';
 import { UsuarioClientService } from './usuario-client.service';
+import {FiltroUsuarioDTO} from "../../../../shared/dto/filtro-usuario.dto";
 
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
@@ -36,7 +37,9 @@ export class UsuarioResolve implements Resolve<any> {
     const id = route.params.id;
 
     return new Observable(observer => {
-      this.usuarioClientService.getById(id).subscribe(
+      const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
+      filtro.status = "Ativo"
+      this.usuarioClientService.getByFiltro(id).subscribe(
         data => {
           observer.next(data);
           observer.complete();
