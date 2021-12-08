@@ -20,11 +20,6 @@ export const PedidoRoutes: Routes = [
       acao: 'incluir',
     },
     resolve: {
-      // saborUm: SaborListResolve,
-      // saborDois: SaborListResolve,
-      // saborTres: SaborListResolve,
-      // saborQuatro: SaborListResolve,
-      // saborCinco: SaborListResolve,
       sabores: SaborListResolve,
       tamanho: TamanhoListResolve
     }

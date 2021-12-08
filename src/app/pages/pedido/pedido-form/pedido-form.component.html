@@ -39,6 +39,8 @@
             </mat-form-field>
           </div>
 
+          <div>
+
 <!--          LINHA DOIS-->
 
           <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
@@ -46,7 +48,7 @@
             <mat-label>{{'LABEL_TIPO_OVO' | i18n}}</mat-label>
             <mat-select placeholder="{{'LABEL_TIPO_OVO' | i18n}}" title="{{'LABEL_TIPO_OVO' | i18n}}"
                         [(ngModel)]="pedido.tipoOvo"
-                        [disabled]="acaoSistema.isAcaoVisualizar()"
+                        [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                         name="tipoOvo" required
             >
               <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -62,7 +64,7 @@
               <mat-label>{{'LABEL_TAMANHO' | i18n}}</mat-label>
               <mat-select placeholder="{{'LABEL_TAMANHO' | i18n}}" title="{{'LABEL_TAMANHO' | i18n}}"
                           [(ngModel)]="pedido.idTamanho"
-                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="idTamanho" required
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -81,10 +83,10 @@
           <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
 
             <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
-              <mat-label>{{'LABEL_SABOR' | i18n}}</mat-label>
-              <mat-select placeholder="{{'LABEL_SABOR' | i18n}}" title="{{'LABEL_SABOR' | i18n}}"
+              <mat-label>{{'LABEL_SABOR_UM' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_SABOR_UM' | i18n}}" title="{{'LABEL_SABOR_UM' | i18n}}"
                           [(ngModel)]="pedido.idSaborUm"
-                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="saborUm" required
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -97,10 +99,10 @@
 
 
             <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
-              <mat-label>{{'LABEL_SABOR' | i18n}}</mat-label>
-              <mat-select placeholder="{{'LABEL_SABOR' | i18n}}" title="{{'LABEL_SABOR' | i18n}}"
+              <mat-label>{{'LABEL_SABOR_DOIS' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_SABOR_DOIS' | i18n}}" title="{{'LABEL_SABOR_DOIS' | i18n}}"
                           [(ngModel)]="pedido.idSaborDois"
-                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="saborDois"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -119,10 +121,10 @@
 
 
             <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
-              <mat-label>{{'LABEL_SABOR' | i18n}}</mat-label>
-              <mat-select placeholder="{{'LABEL_SABOR' | i18n}}" title="{{'LABEL_SABOR' | i18n}}"
+              <mat-label>{{'LABEL_SABOR_TRES' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_SABOR_TRES' | i18n}}" title="{{'LABEL_SABOR_TRES' | i18n}}"
                           [(ngModel)]="pedido.idSaborTres"
-                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="saborTres"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -133,10 +135,10 @@
             </mat-form-field>
 
             <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
-              <mat-label>{{'LABEL_SABOR' | i18n}}</mat-label>
-              <mat-select placeholder="{{'LABEL_SABOR' | i18n}}" title="{{'LABEL_SABOR' | i18n}}"
+              <mat-label>{{'LABEL_SABOR_QUATRO' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_SABOR_QUATRO' | i18n}}" title="{{'LABEL_SABOR_QUATRO' | i18n}}"
                           [(ngModel)]="pedido.idSaborQuatro"
-                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="saborQuatro"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -156,10 +158,10 @@
 
 
             <mat-form-field fxFlex.gt-xs="50" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1">
-              <mat-label>{{'LABEL_SABOR' | i18n}}</mat-label>
-              <mat-select placeholder="{{'LABEL_SABOR' | i18n}}" title="{{'LABEL_SABOR' | i18n}}"
+              <mat-label>{{'LABEL_SABOR_CINCO' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_SABOR_CINCO' | i18n}}" title="{{'LABEL_SABOR_CINCO' | i18n}}"
                           [(ngModel)]="pedido.idSaborCinco"
-                          [disabled]="acaoSistema.isAcaoVisualizar()"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="saborCinco"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
@@ -173,7 +175,7 @@
               <mat-label>{{'LABEL_DATA_ENTREGA' | i18n}}</mat-label>
               <input matInput [matDatepicker]="picker" [(ngModel)]="pedido.dataEntrega" name="dataEntrega" required readonly
                      (focus)="picker.open()" (click)="picker.open()" placeholder="{{'LABEL_DATA_AMIZADE' | i18n}}"
-                     [disabled]="acaoSistema.isAcaoVisualizar()">
+                     [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)">
               <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
@@ -181,25 +183,17 @@
 
           </div>
 
+            </div>
 
           <!--          LINHA SEIS-->
 
           <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_INFORME_ENDERECO' | i18n}}</mat-label>
-              <input matInput placeholder="{{'LABEL_INFORME_ENDERECO' | i18n}}" title="{{'LABEL_INFORME_ENDERECO' | i18n}}"
-                     [(ngModel)]="pedido.endereco" name="endereco" maxlength="150"
-                     [disabled]="acaoSistema.isAcaoVisualizar()"
-              >
-              <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
-            </mat-form-field>
-
-            <mat-form-field fxFlex>
-              <mat-label>{{'LABEL_INFORME_OBSERVACAO' | i18n}}</mat-label>
-              <input matInput placeholder="{{'LABEL_INFORME_OBSERVACAO' | i18n}}" title="{{'LABEL_INFORME_OBSERVACAO' | i18n}}"
-                     [(ngModel)]="pedido.observacao" name="observacao" maxlength="240"
-                     [disabled]="acaoSistema.isAcaoVisualizar()"
-              >
+              <textarea matInput placeholder="{{'LABEL_INFORME_ENDERECO' | i18n}}" title="{{'LABEL_INFORME_ENDERECO' | i18n}}"
+                     [(ngModel)]="pedido.endereco" name="endereco" maxlength="150" rows="2"
+                        [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
+              ></textarea>
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
             </mat-form-field>
           </div>
@@ -207,13 +201,27 @@
 
           <!--          LINHA SETE-->
 
+          <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%">
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_INFORME_OBSERVACAO' | i18n}}</mat-label>
+              <textarea matInput placeholder="{{'LABEL_INFORME_OBSERVACAO' | i18n}}" title="{{'LABEL_INFORME_OBSERVACAO' | i18n}}"
+                        [(ngModel)]="pedido.observacao" name="observacao" maxlength="250" rows="5"
+                        [disabled]="acaoSistema.isAcaoVisualizar()"
+              ></textarea>
+              <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
+            </mat-form-field>
+          </div>
+
+
+          <!--          LINHA OITO-->
+
           <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" fxLayoutGap="0.7%"
                *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_INFORME_PRECO' | i18n}}</mat-label>
               <input matInput placeholder="{{'LABEL_INFORME_PRECO' | i18n}}" title="{{'LABEL_INFORME_PRECO' | i18n}}"
                      [(ngModel)]="pedido.preco" name="preco" maxlength="150"
-                     [disabled]="acaoSistema.isAcaoVisualizar()">
+                     [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)">
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
             </mat-form-field>
 
@@ -226,9 +234,16 @@
                           name="status"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
-                <mat-option *ngFor="let statusPedido of listStatusPedido" [value]="statusPedido.id">
+                <div *ngIf="pedido.status=='aceitopg' || pedido.status=='cancelado'">
+                <mat-option *ngFor="let statusPedido of listStatusPedidoAceito" [value]="statusPedido.id">
                   {{statusPedido.descricao}}
                 </mat-option>
+                </div>
+                <div *ngIf="pedido.status!='aceitopg' && pedido.status!='cancelado'">
+                  <mat-option *ngFor="let statusPedido of listStatusPedido" [value]="statusPedido.id">
+                    {{statusPedido.descricao}}
+                  </mat-option>
+                </div>
               </mat-select>
             </mat-form-field>
           </div>

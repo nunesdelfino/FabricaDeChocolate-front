@@ -21,7 +21,7 @@ export class PedidoClientService {
   constructor(private http: HttpClient) { }
 
   /**
-   * Retorna a instância de Amigo conforme o 'id' informado.
+   * Retorna a instância de pedido conforme o 'id' informado.
    *
    * @param id
    * @return

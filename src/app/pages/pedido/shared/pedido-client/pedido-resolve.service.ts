@@ -28,7 +28,7 @@ export class PedidoResolve implements Resolve<any> {
   ) { }
 
   /**
-   * Realiza a consulta por id de Amigo.
+   * Realiza a consulta por id de Pedido.
    *
    * @param route
    */

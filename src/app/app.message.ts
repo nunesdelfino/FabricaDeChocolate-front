@@ -126,11 +126,16 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_DATA_ENTREGA: "Data Entrega",
       LABEL_PRECO: "Preço",
       LABEL_OBSERVACAO: "Observação",
-      LABEL_INFORME_NUMERO: "Numero",
+      LABEL_INFORME_NUMERO: "Contato",
       LABEL_INFORME_TIPO_OVO: "Tipo Ovo",
       LABEL_INFORME_ENDERECO: "Endereço",
       LABEL_INFORME_OBSERVACAO: "Observação",
       LABEL_INFORME_PRECO: "Preço",
+      LABEL_SABOR_UM: 'Sabor Um',
+      LABEL_SABOR_DOIS: 'Sabor Dois',
+      LABEL_SABOR_TRES: 'Sabor Três',
+      LABEL_SABOR_QUATRO: 'Sabor Quatro',
+      LABEL_SABOR_CINCO: 'Sabor Cinco',
 
 
       // Texto manter  AMIGO

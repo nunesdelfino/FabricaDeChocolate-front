@@ -164,4 +164,12 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
   ngOnInit(): void {
   }
 
+  public statusPedidoPagoCancelado(p): boolean{
+    if(p.status=="aceitopg" || p.status=="cancelado"){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
