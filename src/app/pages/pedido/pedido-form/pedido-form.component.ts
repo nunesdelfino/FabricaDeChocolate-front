@@ -166,7 +166,7 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
   }
 
   public statusPedidoPagoCancelado(p): boolean{
-    if(p.status=="aceitopg" || p.status=="cancelado"){
+    if(p.status==StatusPedido.ACEITOPG || p.status=="cancelado"){
       return true;
     } else {
       return false;

@@ -58,14 +58,13 @@ export class TamanhoClientService {
   }
 
   /**
-   * Ativa Tamanho pelo 'id' informado
+   * Ativa Tamanho pelo 'id' informado (Tamanho=true)
    *
    * @param id
    * @return
    */
   public ativarTamanho(id: number): Observable<any> {
-    return this.http.put(`${environment.urlApi}/tamanho/${id}/ativar-tamanho`, {});
-    console.log("entrou no ativar");
+    return this.http.put(`${environment.urlApi}/tamanho/${id}/ativar-tamanho`, {}); //URL correta
   }
 
   /**
@@ -75,8 +74,7 @@ export class TamanhoClientService {
    * @return
    */
   public desativarTamanho(id: number): Observable<any> {
-    return this.http.put(`${environment.urlApi}/tamanho/${id}/desativar-tamanho`, {});
-    console.log("entrou 2");
+    return this.http.put(`${environment.urlApi}/tamanho/${id}/desativar-tamanho`, {}); //URL correta
   }
 
 

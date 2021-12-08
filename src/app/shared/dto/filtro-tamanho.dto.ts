@@ -2,9 +2,9 @@
 import { HttpParams } from '@angular/common/http';
 
 /**
- * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa de Tipo Amigo.
+ * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa do Tamanho.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Maria E F Oliveira
  */
 export class FiltroTamanhoDTO {
 
@@ -12,9 +12,11 @@ export class FiltroTamanhoDTO {
    * Construtor da classe.
    *
    * @param tamanho
+   * @param ativo
    */
   constructor(
-    public tamanho?: string
+    public tamanho?: string,
+    public ativo?: boolean, //Seguindo o amigo
   ) { }
 
   /**
@@ -33,15 +35,19 @@ export class FiltroTamanhoDTO {
     return new FiltroTamanhoDTO();
   }
 
-  /**
+   /**
    * Retorna a instância de HttpParams considerando os parâmetros informados.
    */
-  public toParams(): HttpParams {
-    let params = new HttpParams();
+    public toParams(): HttpParams {
+      let params = new HttpParams();
 
-    if (this.tamanho) {
-      params = params.append('tamanho', this.tamanho);
+      if (this.tamanho) {
+        params = params.append('tamanho', this.tamanho);
+      }
+
+      if (this.ativo) { //!=undefined?
+        params = params.append('idStatus', this.ativo ? 'true' : 'false' ); //O status eh definido por S e N no back
+      }
+      return params;
     }
-    return params;
-  }
 }

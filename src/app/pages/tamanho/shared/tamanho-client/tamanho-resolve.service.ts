@@ -9,7 +9,7 @@ import { TamanhoClientService } from './tamanho-client.service';
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Maria E F Oliveira
  */
 @Injectable()
 export class TamanhoResolve implements Resolve<any> {

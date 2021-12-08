@@ -16,14 +16,14 @@
           <span>{{'LABEL_DADOS_USUARIO' | i18n}}</span>
         </mat-card-title>
         <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
+          <!--          <div fxLayout="row" fxLayoutAlign.gt-xs="end end" fxLayout.lt-sm="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%" fxLayoutGap.xs="7%">
+            <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
+            *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
+            <mat-label>{{'LABEL_ACESSO_BLOQUEADO' | i18n}}:</mat-label>
+            <mat-label>{{ (usuario.acessoBloqueado ? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}</mat-label>
+          </div>-->
 
           <div fxLayout="row" fxLayoutAlign.gt-xs="end end" fxLayout.lt-sm="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%" fxLayoutGap.xs="7%">
-<!--            <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"-->
-<!--                 *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">-->
-<!--              <mat-label>{{'LABEL_ACESSO_BLOQUEADO' | i18n}}:</mat-label>-->
-<!--              <mat-label>{{ (usuario.acessoBloqueado ? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}</mat-label>-->
-<!--            </div>-->
-
             <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
                  *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
               <mat-label>{{'LABEL_STATUS_PORTAL' | i18n}}:</mat-label>

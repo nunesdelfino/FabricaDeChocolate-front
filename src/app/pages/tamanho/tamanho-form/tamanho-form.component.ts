@@ -11,7 +11,7 @@ import {TamanhoClientService} from '../shared/tamanho-client/tamanho-client.serv
 /**
  * Componente de formulário de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Maria E F Oliveira
  */
 @Component({
   selector: 'app-usuario-form',
@@ -42,7 +42,7 @@ export class TamanhoFormComponent {
   constructor(
     route: ActivatedRoute,
     private router: Router,
-    private dialog: MatDialog,
+    private dialog: MatDialog, //nao utilizado
     private messageService: MessageService,
     public securityService: SecurityService,
     private tamanhoClientService: TamanhoClientService
@@ -57,6 +57,55 @@ export class TamanhoFormComponent {
       this.tamanho = route.snapshot.data.tamanho;
     }
   }
+
+      /**
+   * Altera o status do Usuário informado.
+   *
+   * @param tamanho
+   */
+       public alterarStatusTamanho(tamanho: any): void {
+        if (!tamanho.tamanho) { //Seria .ativo?
+          this.inativar(tamanho);
+        } else {
+          this.ativar(tamanho);
+        }
+      }
+
+    /**
+     * Ativa o Tamanho informado.
+     *
+     * @param tamanho
+     */
+    private ativar(tamanho: any): void {
+      this.messageService.addConfirmYesNo('MSG034', () => {
+        this.tamanhoClientService.ativarTamanho(tamanho.id).subscribe(() => {
+          this.messageService.addMsgSuccess('MSG007');
+        }, error => {
+          tamanho.ativo = false; //Aqui seria ativo ou status
+          this.messageService.addMsgDanger(error);
+        });
+      }, () => {
+        tamanho.ativo = false;
+      });
+    }
+
+      /**
+     * Inativa o Usuário informado.
+     *
+     * @param tamanho
+     */
+       private inativar(tamanho: any): void {
+        this.messageService.addConfirmYesNo('MSG033', () => {
+          this.tamanhoClientService.desativarTamanho(tamanho.id).subscribe(() => {
+            this.messageService.addMsgSuccess('MSG007'); //Sera necessario?
+          }, error => {
+            tamanho.ativo = true;
+            this.messageService.addMsgDanger(error);
+          });
+        }, () => {
+          tamanho.ativo = true;
+        });
+      }
 
   /**
    * Salva a instância de Tamanho.
@@ -77,7 +126,7 @@ export class TamanhoFormComponent {
         this.messageService.addMsgDanger(error);
       });
     } else {
-      this.messageService.addMsgSuccess('MSG001');
+      this.messageService.addMsgSuccess('MSG001'); //???
     }
   }
 

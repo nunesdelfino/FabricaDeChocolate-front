@@ -28,6 +28,21 @@
 
           </div>
         </mat-card-content>
+
+        <!--Adicionado-->
+        <div fxLayout="row" fxLayoutAlign.gt-xs="start" fxLayout.lt-sm="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%" fxLayoutGap.xs="7%">
+          <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
+               *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
+            <mat-label>{{'LABEL_STATUS_TAMANHO' | i18n}}:</mat-label><!--Nome status-->
+            <mat-slide-toggle [(ngModel)]="tamanho.ativo" (change)="alterarStatusTamanho(tamanho)" name="statusTamanho"
+                              title="{{ (tamanho.ativo ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}"
+            > <!--Texto dizendo se esta ativo ou nao-->
+            <mat-label> <!--Seria ativo em vez de status?-->
+              {{(tamanho.ativo ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n}}
+            </mat-label>
+          </mat-slide-toggle>
+          </div>
+        </div>
       </mat-card>
     </form>
 
@@ -47,13 +62,6 @@
           >
             <span>{{'LABEL_CANCELAR' | i18n}}</span>
           </a>
-
-<!--          <button type="submit" title="{{'LABEL_REMOVER' | i18n}}" (click)="remover(sabor)"-->
-<!--                  fxFlex fxFlexOffset="1"-->
-<!--                  class="mat-button mat-raised-button mat-warn mat-button-base"-->
-<!--          >-->
-<!--            <span>{{'LABEL_REMOVER' | i18n}}</span>-->
-<!--          </button>-->
           <button type="submit" title="{{'LABEL_SALVAR' | i18n}}" (click)="salvar(tamanho, formTamanho, $event)"
                   fxFlex fxFlexOffset="1"
                   class="mat-button mat-raised-button mat-primary mat-button-base"

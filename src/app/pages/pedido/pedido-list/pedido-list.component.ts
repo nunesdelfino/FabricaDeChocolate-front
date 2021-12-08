@@ -10,6 +10,8 @@ import {AbstractComponent} from '../../../shared/component/Abstract.component';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
 import {formatDate} from '@angular/common';
 import {FiltroPedidoDTO} from "../../../shared/dto/filtro-pedido.dto";
+import {AcaoSistema} from "../../../shared/component/acao-sistema.acao";
+import {StatusPedido} from "../../../shared/app.constantes";
 
 /**
  * Componente de listagem de Usuário.
@@ -151,5 +153,16 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
     }, () => {
       pedido.ativo = false;
     });
+  }
+
+  private statausVisao(p): string{
+
+    if(p==StatusPedido.ACEITOPG.id){
+      return StatusPedido.ACEITOPG.descricao
+    }
+    if(p==StatusPedido.ACEITONPG.id){
+      return StatusPedido.ACEITONPG.descricao
+    }
+    return p;
   }
 }
