@@ -9,6 +9,7 @@ import {AcaoSistema} from '../../../shared/component/acao-sistema.acao';
 import {SecurityService} from '../../../shared/security/security.service';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
 import {AbstractComponent} from '../../../shared/component/Abstract.component';
+import {StatusPedido} from "../../../shared/app.constantes";
 
 /**
  * Componente de formulário de Amigo.
@@ -170,6 +171,16 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
     } else {
       return false;
     }
+  }
+
+  public pendenteId(): string {
+    return StatusPedido.ACEITOPG.id
+  }
+
+
+
+  public pendenteDescricao(): string {
+    return StatusPedido.ACEITOPG.descricao
   }
 
 }

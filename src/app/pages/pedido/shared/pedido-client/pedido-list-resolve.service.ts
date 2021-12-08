@@ -38,7 +38,7 @@ export class PedidoListResolve implements Resolve<any> {
 
     return new Observable(observer => {
       const filtro: FiltroPedidoDTO = new FiltroPedidoDTO();
-      filtro.nome = '%%%%';
+      filtro.status = 'pendente';
       this.pedidoClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);

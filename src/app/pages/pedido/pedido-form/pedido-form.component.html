@@ -234,16 +234,25 @@
                           name="status"
               >
                 <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
-                <div *ngIf="pedido.status=='aceitopg' || pedido.status=='cancelado'">
+
+                <div *ngIf="pedido.status=='aceitopg'">
                 <mat-option *ngFor="let statusPedido of listStatusPedidoAceito" [value]="statusPedido.id">
                   {{statusPedido.descricao}}
                 </mat-option>
                 </div>
+
                 <div *ngIf="pedido.status!='aceitopg' && pedido.status!='cancelado'">
                   <mat-option *ngFor="let statusPedido of listStatusPedido" [value]="statusPedido.id">
                     {{statusPedido.descricao}}
                   </mat-option>
                 </div>
+
+                <div *ngIf="pedido.status=='cancelado'">
+                  <mat-option *ngFor="let statusPedido of listStatusPedidoCancelado" [value]="statusPedido.id">
+                    {{statusPedido.descricao}}
+                  </mat-option>
+                </div>
+
               </mat-select>
             </mat-form-field>
           </div>
