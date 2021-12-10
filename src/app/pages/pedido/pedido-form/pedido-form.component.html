@@ -32,7 +32,7 @@
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_INFORME_NUMERO' | i18n}}</mat-label>
               <input matInput placeholder="{{'LABEL_INFORME_NUMERO' | i18n}}" title="{{'LABEL_INFORME_NUMERO' | i18n}}"
-                     [(ngModel)]="pedido.numero" name="numero" required maxlength="20"
+                     [(ngModel)]="pedido.numero" name="numero" required maxlength="40"
                      [disabled]="acaoSistema.isAcaoVisualizar()"
               >
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>

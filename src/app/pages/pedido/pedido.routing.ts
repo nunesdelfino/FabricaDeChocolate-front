@@ -6,6 +6,8 @@ import {PedidoListComponent} from './pedido-list/pedido-list.component';
 import {PedidoListResolve} from './shared/pedido-client/pedido-list-resolve.service';
 import {SaborListResolve} from "../sabor/shared/sabor-client/sabor-list.resolve";
 import {TamanhoListResolve} from "../tamanho/shared/tamanho-client/tamanho-list-resolve.service";
+import {TamanhoListAtivosResolve} from "../tamanho/shared/tamanho-client/tamanho-list-ativos-resolve.service";
+import {SaborListAtivosResolve} from "../sabor/shared/sabor-client/sabor-list-ativos.resolve";
 
 /**
  * Configurações de rota de Usuário.
@@ -20,8 +22,8 @@ export const PedidoRoutes: Routes = [
       acao: 'incluir',
     },
     resolve: {
-      sabores: SaborListResolve,
-      tamanho: TamanhoListResolve
+      sabores: SaborListAtivosResolve,
+      tamanho: TamanhoListAtivosResolve
     }
   },
   {

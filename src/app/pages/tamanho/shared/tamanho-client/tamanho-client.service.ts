@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../../environments/environment';
 import {FiltroUsuarioDTO} from '../../../../shared/dto/filtro-usuario.dto';
+import {FiltroTamanhoDTO} from "../../../../shared/dto/filtro-tamanho.dto";
 
 /**
  * Classe de integração com o serviço de Usuário.
@@ -35,7 +36,7 @@ export class TamanhoClientService {
    *
    * @param filtroDTO
    */
-  public getByFiltro(filtroDTO: FiltroUsuarioDTO): Observable<any> {
+  public getByFiltro(filtroDTO: FiltroTamanhoDTO): Observable<any> {
     return this.http.get(`${environment.urlApi}/tamanho/filtro`, {
       params: filtroDTO.toParams()
     });

@@ -16,7 +16,7 @@ export class FiltroTamanhoDTO {
    */
   constructor(
     public tamanho?: string,
-    public ativo?: boolean, //Seguindo o amigo
+    public ativo?: string, //Seguindo o amigo
   ) { }
 
   /**
@@ -46,7 +46,7 @@ export class FiltroTamanhoDTO {
       }
 
       if (this.ativo) { //!=undefined?
-        params = params.append('idStatus', this.ativo ? 'true' : 'false' ); //O status eh definido por S e N no back
+        params = params.append('ativo', this.ativo ? 'S' : 'N' ); //O status eh definido por S e N no back
       }
       return params;
     }

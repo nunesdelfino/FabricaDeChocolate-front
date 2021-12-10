@@ -5,7 +5,9 @@ import {PedidoResolve} from './pedido-resolve.service';
 import {PedidoClientService} from './pedido-client.service';
 import {PedidoListResolve} from './pedido-list-resolve.service';
 import {TamanhoListResolve} from "../../../tamanho/shared/tamanho-client/tamanho-list-resolve.service";
+import {TamanhoListAtivosResolve} from "../../../tamanho/shared/tamanho-client/tamanho-list-ativos-resolve.service";
 import {SaborListResolve} from "../../../sabor/shared/sabor-client/sabor-list.resolve";
+import {SaborListAtivosResolve} from "../../../sabor/shared/sabor-client/sabor-list-ativos.resolve";
 
 
 /**
@@ -20,6 +22,8 @@ import {SaborListResolve} from "../../../sabor/shared/sabor-client/sabor-list.re
     PedidoClientService,
     PedidoResolve,
     TamanhoListResolve,
+    TamanhoListAtivosResolve,
+    SaborListAtivosResolve,
     SaborListResolve,
     PedidoListResolve
   ]

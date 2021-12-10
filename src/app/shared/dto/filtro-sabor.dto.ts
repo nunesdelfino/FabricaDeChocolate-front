@@ -14,7 +14,8 @@ export class FiltroSaborDTO {
    * @param sabor
    */
   constructor(
-    public sabor?: string
+    public sabor?: string,
+    public ativo?: string
   ) { }
 
   /**
@@ -42,6 +43,11 @@ export class FiltroSaborDTO {
     if (this.sabor) {
       params = params.append('sabor', this.sabor);
     }
+
+    if (this.ativo) {
+      params = params.append('ativo', this.ativo);
+    }
+
     return params;
   }
 }

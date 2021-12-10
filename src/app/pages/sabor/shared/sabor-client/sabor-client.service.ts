@@ -4,6 +4,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../../../environments/environment';
 import {FiltroUsuarioDTO} from '../../../../shared/dto/filtro-usuario.dto';
+import {FiltroSaborDTO} from "../../../../shared/dto/filtro-sabor.dto";
 
 /**
  * Classe de integração com o serviço de Usuário.
@@ -35,7 +36,7 @@ export class SaborClientService {
    *
    * @param filtroDTO
    */
-  public getByFiltro(filtroDTO: FiltroUsuarioDTO): Observable<any> {
+  public getByFiltro(filtroDTO: FiltroSaborDTO): Observable<any> {
     return this.http.get(`${environment.urlApi}/sabor/filtro`, {
       params: filtroDTO.toParams()
     });
