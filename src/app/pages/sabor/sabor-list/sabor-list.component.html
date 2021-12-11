@@ -83,28 +83,28 @@
               </mat-cell>
             </ng-container>
 
-<!--            <ng-container matColumnDef="ativo">-->
+            <ng-container matColumnDef="ativo">
 
-<!--              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"-->
-<!--                               *matHeaderCellDef> {{ 'LABEL_ATIVO' | i18n}} </mat-header-cell>-->
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+                               *matHeaderCellDef> {{ 'LABEL_ATIVO' | i18n}} </mat-header-cell>
 
-<!--              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"-->
-<!--                        *matCellDef="let element">-->
-<!--                <div fxFlex fxLayout="row">-->
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
+                        *matCellDef="let element">
+                <div fxFlex fxLayout="row">
 
-<!--                  <div fxFlex fxLayoutAlign.gt-xs="center center" fxLayoutAlign.lt-sm="start center"-->
-<!--                       fxLayoutGap.lt-sm="1">-->
-<!--                    <mat-slide-toggle [(ngModel)]="element.ativo" (change)="alterarStatusSabor(element)"-->
-<!--                                      title="{{ (element.ativo ? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}">-->
-<!--                    </mat-slide-toggle>-->
-<!--                    <span>-->
-<!--                                    {{(element.ativo ? 'LABEL_SIM' : 'LABEL_NAO') | i18n}}-->
-<!--                                </span>-->
-<!--                  </div>-->
-<!--                </div>-->
-<!--              </mat-cell>-->
+                  <div fxFlex fxLayoutAlign.gt-xs="center center" fxLayoutAlign.lt-sm="start center"
+                       fxLayoutGap.lt-sm="1">
+                    <mat-slide-toggle [(ngModel)]="element.ativo" (change)="alterarStatusSabor(element)"
+                                      title="{{ (element.ativo ? 'LABEL_SIM' : 'LABEL_NAO') | i18n }}">
+                    </mat-slide-toggle>
+                    <span>
+                                    {{(element.ativo ? 'LABEL_SIM' : 'LABEL_NAO') | i18n}}
+                                </span>
+                  </div>
+                </div>
+              </mat-cell>
 
-<!--            </ng-container>-->
+             </ng-container>
 
             <ng-container matColumnDef="acoes">
               <mat-header-cell fxFlex.gt-sm="100px" class="style-header f" fxLayoutAlign="center center"

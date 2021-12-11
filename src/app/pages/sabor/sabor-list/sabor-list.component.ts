@@ -26,7 +26,7 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
 
   public dataSource: MatTableDataSource<any>;
 
-  public displayedColumns = [ 'nome', 'acoes'];
+  public displayedColumns = [ 'nome','ativo', 'acoes'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
