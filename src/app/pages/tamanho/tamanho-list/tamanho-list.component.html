@@ -131,57 +131,21 @@
               </mat-cell>
             </ng-container>
 
-            <!--
-            <ng-container matColumnDef="ativo">
-              <mat-header-cell
-                class="style-header"
-                fxHide.xs="true"
-                fxLayoutAlign="center center"
-                *matHeaderCellDef
-              >
-                {{ "LABEL_ATIVO" | i18n }}
-              </mat-header-cell>
-
-              <mat-cell
-                fxFlex.lt-sm="100"
-                ngClass.gt-sm="style-column"
-                fxLayoutAlign="start center"
-                *matCellDef="let element"
-              >
+            <ng-container matColumnDef="status">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
+                               *matHeaderCellDef> {{ 'LABEL_STATUS_TAMANHO' | i18n}} </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="center center"
+                        *matCellDef="let element">
                 <div fxFlex fxLayout="row">
-                  <div
-                    fxFlex="130px"
-                    fxHide.gt-xs="true"
-                    fxLayoutAlign="end center"
-                  >
-                    <span class="mat-body-strong"
-                      >{{ "LABEL_STATUS_TAMANHO" | i18n }}? :</span
-                    >
-                  </div>
-
-                  <div
-                    fxFlex
-                    fxLayoutAlign.gt-xs="center center"
-                    fxLayoutAlign.lt-sm="start center"
-                    fxLayoutGap.lt-sm="1"
-                  >
-                    <mat-slide-toggle
-                      [(ngModel)]="element.ativo"
-                      (change)="alterarStatusTamanho(element)"
-                      title="{{
-                        (element.ativo ? 'LABEL_SIM_M' : 'LABEL_NAO_M') | i18n
-                      }}"
-                    >
+                  <div>
+                    <mat-slide-toggle checked={{statusTamanho(element.ativo)}}
+                    (change)="alterarStatusTamanho(element)" name="statusTamanho"
+                    title="{{ (element.ativo ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}">
                     </mat-slide-toggle>
-                    <span>
-                      {{
-                        (element.ativo ? "LABEL_SIM_M" : "LABEL_NAO_M") | i18n
-                      }}
-                    </span>
                   </div>
                 </div>
               </mat-cell>
-            </ng-container>-->
+            </ng-container>
 
             <ng-container matColumnDef="acoes">
               <mat-header-cell

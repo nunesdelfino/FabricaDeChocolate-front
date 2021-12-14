@@ -25,24 +25,8 @@
               >
               <mat-error validationMessage [submitted]="submitted"></mat-error>
             </mat-form-field>
-
           </div>
         </mat-card-content>
-
-        <!--Adicionado-->
-        <div fxLayout="row" fxLayoutAlign.gt-xs="start" fxLayout.lt-sm="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%" fxLayoutGap.xs="7%">
-          <div fxLayout="column" fxLayoutAlign.gt-xs="start start" fxLayout.lt-sm="row" fxLayoutGap.lt-sm="3%" fxLayoutGap.gt-xs="7%"
-               *ngIf="acaoSistema.isAcaoAlterar() || acaoSistema.isAcaoVisualizar()">
-            <mat-label>{{'LABEL_STATUS_TAMANHO' | i18n}}:</mat-label><!--Nome status-->
-            <mat-slide-toggle [(ngModel)]="tamanho.ativo" (change)="alterarStatusTamanho(tamanho)" name="statusTamanho"
-                              title="{{ (tamanho.ativo ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}"
-            > <!--Texto dizendo se esta ativo ou nao-->
-            <mat-label> <!--Seria ativo em vez de status?-->
-              {{(tamanho.ativo ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n}}
-            </mat-label>
-          </mat-slide-toggle>
-          </div>
-        </div>
       </mat-card>
     </form>
 

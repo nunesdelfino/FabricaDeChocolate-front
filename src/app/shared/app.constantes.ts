@@ -21,7 +21,6 @@ export const PAGINATOR_PAGE_SIZE = 5;
 /**
  * Classe que disponibiliza as constantes de Status na aplicação.
  *
- * @author Guiliano Rangel (UEG)
  */
 export class StatusAtivoInativo {
 
@@ -96,7 +95,6 @@ export class TipoOvo {
 /**
  * Classe que disponibiliza as constantes de Status SimNao na aplicação.
  *
- * @author Guiliano Rangel (UEG)
  */
 export class StatusSimNao {
 
@@ -118,9 +116,7 @@ export class StatusSimNao {
 
 /**
  * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
- *
- * @author Guiliano Rangel (UEG)
- */
+|*/
 export class TipoUsuario {
 
   public static readonly SERVIDOR_INTERNO: TipoUsuario = new TipoUsuario('S', 'Servidor Interno');

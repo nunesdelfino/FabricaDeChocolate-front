@@ -1,3 +1,4 @@
+import { StatusSimNao } from 'src/app/shared/app.constantes';
 /* tslint:disable:no-redundant-jsdoc */
 import {ActivatedRoute} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
@@ -26,7 +27,7 @@ export class TamanhoListComponent extends AbstractComponent implements OnInit {
 
   public dataSource: MatTableDataSource<any>;
 
-  public displayedColumns = [ 'nome', 'acoes'];
+  public displayedColumns = [ 'nome','status','acoes'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
@@ -85,51 +86,57 @@ export class TamanhoListComponent extends AbstractComponent implements OnInit {
    *
    * @param tamanho
    */
-  public alterarStatusTamanho(tamanho: any): void {
-    console.log('alterastatus:', tamanho);
-    if (tamanho.ativo) { //verificar se .tamanho na verdade eh .ativo
+   public alterarStatusTamanho(tamanho: any): void {
+   if (tamanho.ativo=="S") {
+    this.desativarTamanho(tamanho);
+   } else {
+     this.ativarTamanho(tamanho);
+   }
+ }
+
+  public statusTamanho(t): boolean{
+
+    if(t==StatusSimNao.SIM.id){
+      return true
+    }else
+      return false
+  }
+
+  /**
+   * Altera o status do Pedido informado.
+   *
+   * @param tamanho
+   */
+   public alterarStatusPedido(tamanho: any): void {
+
+    if (!tamanho.status) {
       this.ativarTamanho(tamanho);
     } else {
       this.desativarTamanho(tamanho);
     }
   }
 
-
-  /**
-   * Ativar tamanho informado.
-   *
-   * @param tamanho
-   */
-  private ativarTamanho(tamanho: any): void {
-    this.messageService.addConfirmYesNo('MSG055', () => {
-      this.tamanhoClientService.ativarTamanho(tamanho.id).subscribe(() => {
-        this.pesquisar(this.filtroDTO);
-        this.messageService.addMsgSuccess('MSG007');
-      }, error => {
-        tamanho.ativo = false; //tamanho.tamanho antes
-        this.messageService.addMsgDanger(error);
-      });
-    }, () => {
-      tamanho.ativo = false; //tamanho.tamanho
+   private ativarTamanho(tamanho: any): void {
+    this.tamanhoClientService.ativarTamanho(tamanho.id).subscribe(() => {
+    this.messageService.addMsgSuccess('MSG007');
+    }, error => {
+      tamanho.ativo = false;
+      this.messageService.addMsgDanger(error);
     });
+
   }
 
   /**
-   * Deixar de ser Amigo do cadastro informado.
+   * Desativar o tamanho do cadastro informado.
    *
    * @param tamanho
    */
-  private desativarTamanho(tamanho: any): void {
-    this.messageService.addConfirmYesNo('MSG054', () => {
-      this.tamanhoClientService.desativarTamanho(tamanho.id).subscribe(() => {
-        this.pesquisar(this.filtroDTO);
-        this.messageService.addMsgSuccess('MSG007');
-      }, error => {
-        tamanho.ativo = true; //tamanho.tamanho
-        this.messageService.addMsgDanger(error);
-      });
-    }, () => {
-      tamanho.ativo = true; //tamanho.tamanho
+  private desativarTamanho(tamanho): void {
+    this.tamanhoClientService.desativarTamanho(tamanho.id).subscribe(() => {
+    this.messageService.addMsgSuccess('MSG007');
+    }, error => {
+      tamanho.ativo = true;
+      this.messageService.addMsgDanger(error);
     });
   }
 

@@ -58,55 +58,6 @@ export class TamanhoFormComponent {
     }
   }
 
-      /**
-   * Altera o status do Usuário informado.
-   *
-   * @param tamanho
-   */
-       public alterarStatusTamanho(tamanho: any): void {
-        if (!tamanho.tamanho) { //Seria .ativo?
-          this.inativar(tamanho);
-        } else {
-          this.ativar(tamanho);
-        }
-      }
-
-    /**
-     * Ativa o Tamanho informado.
-     *
-     * @param tamanho
-     */
-    private ativar(tamanho: any): void {
-      this.messageService.addConfirmYesNo('MSG034', () => {
-        this.tamanhoClientService.ativarTamanho(tamanho.id).subscribe(() => {
-          this.messageService.addMsgSuccess('MSG007');
-        }, error => {
-          tamanho.ativo = false; //Aqui seria ativo ou status
-          this.messageService.addMsgDanger(error);
-        });
-      }, () => {
-        tamanho.ativo = false;
-      });
-    }
-
-      /**
-     * Inativa o Usuário informado.
-     *
-     * @param tamanho
-     */
-       private inativar(tamanho: any): void {
-        this.messageService.addConfirmYesNo('MSG033', () => {
-          this.tamanhoClientService.desativarTamanho(tamanho.id).subscribe(() => {
-            this.messageService.addMsgSuccess('MSG007'); //Sera necessario?
-          }, error => {
-            tamanho.ativo = true;
-            this.messageService.addMsgDanger(error);
-          });
-        }, () => {
-          tamanho.ativo = true;
-        });
-      }
-
   /**
    * Salva a instância de Tamanho.
    *
