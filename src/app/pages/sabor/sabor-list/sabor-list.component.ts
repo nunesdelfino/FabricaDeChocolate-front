@@ -86,6 +86,7 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
    * @param sabor
    */
   public alterarStatusSabor(sabor: any): void {
+    console.log(sabor);
     if (sabor.ativo) {
       this.ativarSabor(sabor);
     } else {
@@ -126,6 +127,7 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
         this.pesquisar(this.filtroDTO);
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
+        console.log(sabor);
         sabor.ativo = true;
         this.messageService.addMsgDanger(error);
       });
