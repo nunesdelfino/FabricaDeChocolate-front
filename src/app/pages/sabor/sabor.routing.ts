@@ -8,7 +8,7 @@ import { SaborListResolve} from './shared/sabor-client/sabor-list.resolve';
 /**
  * Configurações de rota de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Karen Dantas
  */
 export const SaborRoutes: Routes = [
   {

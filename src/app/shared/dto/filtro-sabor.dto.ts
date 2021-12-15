@@ -1,10 +1,11 @@
 /* tslint:disable:no-redundant-jsdoc */
 import { HttpParams } from '@angular/common/http';
 
+
 /**
- * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa de Tipo Amigo.
+ * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa do Tamanho.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Karen
  */
 export class FiltroSaborDTO {
 
@@ -12,10 +13,11 @@ export class FiltroSaborDTO {
    * Construtor da classe.
    *
    * @param sabor
+   * @param ativo
    */
   constructor(
     public sabor?: string,
-    public ativo?: string
+    public ativo?: string, //Seguindo o amigo
   ) { }
 
   /**
@@ -34,20 +36,19 @@ export class FiltroSaborDTO {
     return new FiltroSaborDTO();
   }
 
-  /**
+   /**
    * Retorna a instância de HttpParams considerando os parâmetros informados.
    */
-  public toParams(): HttpParams {
-    let params = new HttpParams();
+    public toParams(): HttpParams {
+      let params = new HttpParams();
 
-    if (this.sabor) {
-      params = params.append('sabor', this.sabor);
+      if (this.sabor) {
+        params = params.append('sabor', this.sabor);
+      }
+
+      if (this.ativo != null) { //!=undefined?
+        params = params.append('ativo', this.ativo ? 'S' : 'N' ); //O status eh definido por S e N no back
+      }
+      return params;
     }
-
-    if (this.ativo) {
-      params = params.append('ativo', this.ativo);
-    }
-
-    return params;
-  }
 }
