@@ -9,7 +9,7 @@ import { PedidoClientService } from './pedido-client.service';
 /**
  * Classe resolve responsável pela busca das informações de Amigo conforme o id.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Maria E F Oliveira
  */
 @Injectable()
 export class PedidoResolve implements Resolve<any> {

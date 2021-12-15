@@ -136,7 +136,8 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_SABOR_TRES: 'Sabor Três',
       LABEL_SABOR_QUATRO: 'Sabor Quatro',
       LABEL_SABOR_CINCO: 'Sabor Cinco',
-
+      LABEL_PRODUCAO: 'Produção',
+      LABEL_STATUS_PRODUCAO: 'Status da Produção',
 
       // Texto manter  AMIGO
       LABEL_PESQUISAR_AMIGO: 'Pesquisar amigo',
@@ -263,6 +264,10 @@ export class AppMessage implements InternacionalizacaoResource {
       MSG053: 'Ativar Sabor?',
       MSG054: 'Desativar Tamanho?',
       MSG055: 'Ativar Tamanho?',
+      MSG056: 'Tirar da produção?',
+      MSG057: 'Colocar em produção?',
+
+
 
       // Validation
       required: 'Campo obrigat\u00F3rio n\u00E3o preenchido.',

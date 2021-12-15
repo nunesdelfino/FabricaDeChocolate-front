@@ -55,7 +55,7 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
     private dialog: MatDialog,
     private messageService: MessageService,
     public securityService: SecurityService,
-    private pedidoClientService: PedidoClientService,
+    private pedidoClientService: PedidoClientService
   ) {
     super();
     this.acaoSistema = new AcaoSistema(route);
@@ -153,8 +153,8 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
     let confirmed = false;
 
     if (this.acaoSistema.isAcaoVisualizar()) {
-      //this.router.navigateByUrl('/administracao/pedido');
       this.location.back();
+      //this.router.navigateByUrl('/administracao/pedido');
       confirmed = true;
     }
 

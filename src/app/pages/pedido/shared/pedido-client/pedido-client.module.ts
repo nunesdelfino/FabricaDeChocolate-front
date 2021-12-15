@@ -1,3 +1,4 @@
+import { PedidoProducaoResolve } from './pedido-producao-resolve.service';
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
@@ -25,7 +26,8 @@ import {SaborListAtivosResolve} from "../../../sabor/shared/sabor-client/sabor-l
     TamanhoListAtivosResolve,
     SaborListAtivosResolve,
     SaborListResolve,
-    PedidoListResolve
+    PedidoListResolve,
+    PedidoProducaoResolve,
   ]
 })
 export class PedidoClientModule { }

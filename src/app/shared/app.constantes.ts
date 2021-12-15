@@ -21,12 +21,36 @@ export const PAGINATOR_PAGE_SIZE = 5;
 /**
  * Classe que disponibiliza as constantes de Status na aplicação.
  *
+ * @author Guiliano Rangel (UEG)
  */
 export class StatusAtivoInativo {
 
   public static readonly ATIVO: StatusAtivoInativo = new StatusAtivoInativo(true, 'Ativo');
 
   public static readonly INATIVO: StatusAtivoInativo = new StatusAtivoInativo(false, 'Inativo');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: boolean,
+    public descricao: string
+  ) {}
+}
+
+/**
+ * Classe que disponibiliza as constantes de Status na aplicação.
+ *
+ * @author Maria E F Oliveira
+ */
+ export class StatusProducao {
+
+  public static readonly EM_PRODUCAO: StatusAtivoInativo = new StatusAtivoInativo(true, 'Em Produção');
+
+  public static readonly NAO_PRODUCAO: StatusAtivoInativo = new StatusAtivoInativo(false, '-');
 
   /**
    * Construtor da classe.
@@ -95,6 +119,7 @@ export class TipoOvo {
 /**
  * Classe que disponibiliza as constantes de Status SimNao na aplicação.
  *
+ * @author Guiliano Rangel (UEG)
  */
 export class StatusSimNao {
 
@@ -116,7 +141,9 @@ export class StatusSimNao {
 
 /**
  * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
-|*/
+ *
+ * @author Guiliano Rangel (UEG)
+ */
 export class TipoUsuario {
 
   public static readonly SERVIDOR_INTERNO: TipoUsuario = new TipoUsuario('S', 'Servidor Interno');

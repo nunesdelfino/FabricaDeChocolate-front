@@ -1,5 +1,5 @@
-import { StatusProducao } from './../../../shared/app.constantes';
 /* tslint:disable:no-redundant-jsdoc */
+import { StatusProducao } from './../../../shared/app.constantes';
 import {ActivatedRoute} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
@@ -10,10 +10,7 @@ import { PedidoClientService } from '../shared/pedido-client/pedido-client.servi
 import { SecurityService } from 'src/app/shared/security/security.service';
 import { MessageService } from 'src/app/shared/message/message.service';
 
-import {formatDate} from '@angular/common';
 import {FiltroPedidoDTO} from "../../../shared/dto/filtro-pedido.dto";
-import {AcaoSistema} from "../../../shared/component/acao-sistema.acao";
-import {StatusPedido} from "../../../shared/app.constantes";
 
 @Component({
   selector: 'app-pedido-producao',
@@ -78,7 +75,7 @@ public statusProducao(p): boolean{
    */
    public alterarStatusPedido(pedido: any): void {
 
-    if (!pedido.statusProducao) {//alterar pedido.status?
+    if (!pedido.statusProducao) {
       this.emProducao(pedido);
     } else {
       this.naoProducao(pedido);
@@ -95,7 +92,7 @@ private naoProducao(pedido: any): void {
     this.pedidoClientService.naoProducao(pedido.id).subscribe(() => {
       this.messageService.addMsgSuccess('MSG007');
     }, error => {
-      pedido.statusProducao = true; //pedido.status/pedido.statusProducao?
+      pedido.statusProducao = true;
       this.messageService.addMsgDanger(error);
     });
   }, () => {
@@ -104,7 +101,7 @@ private naoProducao(pedido: any): void {
 }
 
   /**
- * Torna o cadastro um Amigo.
+ * Tornar o pedido em produção.
  *
  * @param pedido
  */
@@ -113,7 +110,7 @@ private naoProducao(pedido: any): void {
       this.pedidoClientService.emProducao(pedido.id).subscribe(() => {
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
-        pedido.statusProducao = false; //pedido.status/pedido.statusProducao?
+        pedido.statusProducao = false;
         this.messageService.addMsgDanger(error);
       });
     }, () => {

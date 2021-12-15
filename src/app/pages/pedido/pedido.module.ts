@@ -13,11 +13,13 @@ import { ValidationModule } from '../../shared/validation/validation.module';
 import { PedidoFormComponent } from './pedido-form/pedido-form.component';
 import { PedidoListComponent } from './pedido-list/pedido-list.component';
 import { PedidoClientModule } from './shared/pedido-client/pedido-client.module';
+import { PedidoProducaoComponent } from './pedido-producao/pedido-producao.component';
 
 @NgModule({
   declarations: [
     PedidoFormComponent,
-    PedidoListComponent
+    PedidoListComponent,
+    PedidoProducaoComponent
   ],
   entryComponents: [
   ],
