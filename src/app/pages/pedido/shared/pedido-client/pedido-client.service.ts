@@ -41,6 +41,11 @@ export class PedidoClientService {
     });
   }
 
+  public getPedidosProducao(): Observable<any>{
+
+    return this.http.get(`${environment.urlApi}/pedido/producao`, {
+    });
+  }
 
   /**
    * Salva a instância de amigo.
@@ -77,6 +82,26 @@ export class PedidoClientService {
   public desativarPedido(id: number): Observable<any> {
     return this.http.put(`${environment.urlApi}/pedido/${id}/desativar-pedido`, {});
   }
+
+    /**
+   * Torna Amigo o Amigo pelo 'id' informado (é Amigo=true).
+   *
+   * @param id
+   * @return
+   */
+     public emProducao(id: number): Observable<any> {
+      return this.http.put(`${environment.urlApi}/pedido/${id}/pedido-em-producao`, {});
+    }
+
+    /**
+     *  Deixa de ser amigo pelo 'id' do amigo informado.
+     *
+     * @param id
+     * @return
+     */
+    public naoProducao(id: number): Observable<any> {
+      return this.http.put(`${environment.urlApi}/pedido/${id}/pedido-nao-producao`, {});
+    }
 
   /**
    * remover a instância de amigo.

@@ -10,6 +10,7 @@ import {SecurityService} from '../../../shared/security/security.service';
 import {PedidoClientService} from '../shared/pedido-client/pedido-client.service';
 import {AbstractComponent} from '../../../shared/component/Abstract.component';
 import {StatusPedido} from "../../../shared/app.constantes";
+import { Location } from '@angular/common';
 
 /**
  * Componente de formulário de Amigo.
@@ -50,6 +51,7 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
   constructor(
     route: ActivatedRoute,
     private router: Router,
+    private location: Location,
     private dialog: MatDialog,
     private messageService: MessageService,
     public securityService: SecurityService,
@@ -151,7 +153,8 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
     let confirmed = false;
 
     if (this.acaoSistema.isAcaoVisualizar()) {
-      this.router.navigateByUrl('/administracao/pedido');
+      this.location.back();
+      //this.router.navigateByUrl('/administracao/pedido');
       confirmed = true;
     }
 

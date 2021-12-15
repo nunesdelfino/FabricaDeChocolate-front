@@ -42,6 +42,29 @@ export class StatusAtivoInativo {
 }
 
 /**
+ * Classe que disponibiliza as constantes de Status na aplicação.
+ *
+ * @author Maria E F Oliveira
+ */
+ export class StatusProducao {
+
+  public static readonly EM_PRODUCAO: StatusAtivoInativo = new StatusAtivoInativo(true, 'Em Produção');
+
+  public static readonly NAO_PRODUCAO: StatusAtivoInativo = new StatusAtivoInativo(false, '-');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: boolean,
+    public descricao: string
+  ) {}
+}
+
+/**
  * Classe que disponibiliza as constantes de Status Pedido na aplicação.
  *
  * @author Gabriel Nunes

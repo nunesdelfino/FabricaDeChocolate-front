@@ -5,6 +5,10 @@
       <span class="content__title">{{'LABEL_PESQUISAR_PEDIDO' | i18n}}</span>
     </div>
     <div fxFlex fxLayoutAlign="end center">
+      <button class="mat-button mat-raised-button mat-accent mat-button-base" style="margin-right: 10px;"
+              title="{{'LABEL_PRODUCAO' | i18n}}" routerLink="/administracao/pedido/producao">
+        {{'LABEL_PRODUCAO' | i18n}}
+      </button>
       <button class="mat-button mat-raised-button mat-accent mat-button-base"
               title="{{'LABEL_ADICIONAR_NOVO' | i18n}}" routerLink="/administracao/pedido/incluir">
         {{'LABEL_ADICIONAR_NOVO' | i18n}}
@@ -129,7 +133,7 @@
                     <span class="mat-body-strong">{{ 'LABEL_TAMANHO' | i18n}} :</span>
                   </div>
                   <div>
-                    {{element.nomeTamanho}} g
+                    {{element.nomeTamanho}}
                   </div>
                 </div>
               </mat-cell>

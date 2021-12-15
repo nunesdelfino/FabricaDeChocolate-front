@@ -1,3 +1,4 @@
+import { PedidoProducaoResolve } from './shared/pedido-client/pedido-producao-resolve.service';
 import {Routes} from '@angular/router';
 
 import {PedidoResolve} from './shared/pedido-client/pedido-resolve.service';
@@ -8,6 +9,7 @@ import {SaborListResolve} from "../sabor/shared/sabor-client/sabor-list.resolve"
 import {TamanhoListResolve} from "../tamanho/shared/tamanho-client/tamanho-list-resolve.service";
 import {TamanhoListAtivosResolve} from "../tamanho/shared/tamanho-client/tamanho-list-ativos-resolve.service";
 import {SaborListAtivosResolve} from "../sabor/shared/sabor-client/sabor-list-ativos.resolve";
+import { PedidoProducaoComponent } from './pedido-producao/pedido-producao.component';
 
 /**
  * Configurações de rota de Usuário.
@@ -37,7 +39,24 @@ export const PedidoRoutes: Routes = [
       saborCinco: SaborListResolve,
       tamanho: TamanhoListResolve,
       sabores: SaborListResolve,
-      pedido: PedidoListResolve
+      pedido: PedidoListResolve,
+    }
+  },
+  {
+    path: 'producao',
+    component: PedidoProducaoComponent,
+    data: {
+      acao: 'listarProducao'
+    },
+    resolve: {
+      saborUm: SaborListResolve,
+      saborDois: SaborListResolve,
+      saborTres: SaborListResolve,
+      saborQuatro: SaborListResolve,
+      saborCinco: SaborListResolve,
+      tamanho: TamanhoListResolve,
+      sabores: SaborListResolve,
+      pedido: PedidoProducaoResolve
     }
   },
   {
