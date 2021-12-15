@@ -47,7 +47,7 @@ export class FiltroSaborDTO {
       }
 
       if (this.ativo != null) { //!=undefined?
-        params = params.append('ativo', this.ativo ? 'S' : 'N' ); //O status eh definido por S e N no back
+        params = params.append('ativo', this.ativo); //O status eh definido por S e N no back
       }
       return params;
     }
