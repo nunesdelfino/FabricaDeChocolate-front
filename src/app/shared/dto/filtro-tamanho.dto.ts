@@ -45,7 +45,7 @@ export class FiltroTamanhoDTO {
         params = params.append('tamanho', this.tamanho);
       }
 
-      if (this.ativo) { //!=undefined?
+      if (this.ativo!=null) {
         params = params.append('ativo', this.ativo ? 'S' : 'N' ); //O status eh definido por S e N no back
       }
       return params;
