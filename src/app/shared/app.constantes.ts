@@ -91,6 +91,26 @@ export class StatusPedido {
   ) {}
 }
 
+export class StatusAtivoInativoString {
+
+  public static readonly S: StatusAtivoInativoString = new StatusAtivoInativoString('S', 'Ativo');
+
+  public static readonly N: StatusAtivoInativoString = new StatusAtivoInativoString('N', 'Inativo');
+
+  public static readonly T: StatusAtivoInativoString = new StatusAtivoInativoString('T', 'Todos');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
+
 /**
  * Classe que disponibiliza as constantes de Status Pedido na aplicação.
  *

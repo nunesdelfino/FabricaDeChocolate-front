@@ -6,7 +6,14 @@ import {
   FX_FLEX_GT_LG,
   FX_FLEX_XL,
   PAGINATOR_PAGE_SIZE,
-  StatusAtivoInativo, TipoUsuario, TipoTelefone, TipoRevisao, StatusSimNao, StatusPedido, TipoOvo
+  StatusAtivoInativo,
+  TipoUsuario,
+  TipoTelefone,
+  TipoRevisao,
+  StatusSimNao,
+  StatusPedido,
+  TipoOvo,
+  StatusAtivoInativoString
 } from '../app.constantes';
 
 /**
@@ -22,6 +29,7 @@ export class AbstractComponent {
   public PAGINATOR_PAGE_SIZE = PAGINATOR_PAGE_SIZE;
 
   public listStatusAtivosInativos: Array<StatusAtivoInativo>;
+  public listStatusAtivosInativosString: Array<StatusAtivoInativoString>;
   public listStatusSimNao: Array<StatusSimNao>;
   public listStatusPedido: Array<StatusPedido>;
   public listStatusPedidoAceito: Array<StatusPedido>;
@@ -33,6 +41,7 @@ export class AbstractComponent {
 
   constructor() {
     this.initListStatusAtivosInativos();
+    this.initListStatusAtivosInativosString();
     this.initListTiposUsuarios();
     this.initListTiposTelefones();
     this.initListTiposRevisoes();
@@ -79,6 +88,16 @@ export class AbstractComponent {
     this.listTipoOvo.push(TipoOvo.COLHER);
     this.listTipoOvo.push(TipoOvo.SIMPLES);
     this.listTipoOvo.push(TipoOvo.TRUFADO);
+  }
+
+
+  /**
+   * Inicializa a Lista de Status.
+   */
+  private initListStatusAtivosInativosString() {
+    this.listStatusAtivosInativosString = [];
+    this.listStatusAtivosInativosString.push(StatusAtivoInativoString.S);
+    this.listStatusAtivosInativosString.push(StatusAtivoInativoString.N);
   }
 
 
