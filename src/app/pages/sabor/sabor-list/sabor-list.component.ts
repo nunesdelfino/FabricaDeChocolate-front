@@ -87,12 +87,13 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
    */
   public alterarStatusSabor(sabor: any): void {
     console.log(sabor);
-    if (sabor.ativo) {
+    if (sabor.ativo) {   //verificação como está entrando
       this.ativarSabor(sabor);
     } else {
       this.desativarSabor(sabor);
     }
   }
+
 
 
   /**
@@ -104,7 +105,6 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
     this.messageService.addConfirmYesNo('MSG053', () => {
       console.log('ativar:', sabor);
       this.saborClientService.ativarSabor(sabor.id).subscribe(() => {
-        this.pesquisar(this.filtroDTO);
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
         sabor.ativo = false;
@@ -124,7 +124,6 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
     this.messageService.addConfirmYesNo('MSG052', () => {
       console.log('desativar:', sabor);
       this.saborClientService.desativarSabor(sabor.id).subscribe(() => {
-        this.pesquisar(this.filtroDTO);
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
         console.log(sabor);

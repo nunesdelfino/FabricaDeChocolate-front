@@ -10,7 +10,7 @@ import {FiltroSaborDTO} from "../../../../shared/dto/filtro-sabor.dto";
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Karen Dantas
  */
 @Injectable()
 export class SaborListAtivosResolve implements Resolve<any> {
