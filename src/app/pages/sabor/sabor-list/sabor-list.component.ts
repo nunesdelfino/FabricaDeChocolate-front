@@ -1,4 +1,5 @@
 /* tslint:disable:no-redundant-jsdoc */
+import { StatusSimNao } from 'src/app/shared/app.constantes';
 import {ActivatedRoute} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
@@ -85,12 +86,20 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
    *
    * @param sabor
    */
+
+   public statusSabor(s): boolean{
+
+    if(s==StatusSimNao.SIM.id){
+      return true
+    }else
+      return false
+  }
+
   public alterarStatusSabor(sabor: any): void {
-    console.log(sabor);
-    if (sabor.ativo) {   //verificação como está entrando
-      this.ativarSabor(sabor);
-    } else {
+    if (sabor.ativo =="S") {   //verificação como está entrando
       this.desativarSabor(sabor);
+    } else {
+      this.ativarSabor(sabor);
     }
   }
 
@@ -103,8 +112,7 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
    */
   private ativarSabor(sabor: any): void {
     this.messageService.addConfirmYesNo('MSG053', () => {
-      console.log('ativar:', sabor);
-      this.saborClientService.ativarSabor(sabor.id).subscribe(() => {
+        this.saborClientService.ativarSabor(sabor.id).subscribe(() => {
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
         sabor.ativo = false;
@@ -122,11 +130,9 @@ export class SaborListComponent extends AbstractComponent implements OnInit {
    */
   private desativarSabor(sabor: any): void {
     this.messageService.addConfirmYesNo('MSG052', () => {
-      console.log('desativar:', sabor);
       this.saborClientService.desativarSabor(sabor.id).subscribe(() => {
         this.messageService.addMsgSuccess('MSG007');
       }, error => {
-        console.log(sabor);
         sabor.ativo = true;
         this.messageService.addMsgDanger(error);
       });
