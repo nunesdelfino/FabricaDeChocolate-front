@@ -96,7 +96,7 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_DADOS_SABOR: 'Dados do sabor',
       LABEL_REMOVER_SABOR: 'Remover sabor',
       LABEL_SABOR: 'Sabor',
-      LABEL_STATUS_SABOR: 'Status sabor',
+      LABEL_STATUS_SABOR: 'Status do Sabor',
 
       // Texto manter Tamanho
       LABEL_PESQUISAR_TAMANHO: 'Pesquisar tamanho',
