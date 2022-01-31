@@ -1,4 +1,3 @@
-/* tslint:disable:no-redundant-jsdoc */
 import { HttpParams } from '@angular/common/http';
 
 

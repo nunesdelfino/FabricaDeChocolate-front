@@ -46,7 +46,7 @@
             "LABEL_TODOS" | i18n
           }}</mat-option>
           <mat-option
-            *ngFor="let statusAtivoInativo of listStatusAtivosInativos"
+            *ngFor="let statusAtivoInativo of listStatusAtivosInativosString"
             [value]="statusAtivoInativo.id"
           >
             {{ statusAtivoInativo.descricao }}
