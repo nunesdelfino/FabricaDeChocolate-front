@@ -73,7 +73,6 @@ export class UsuarioFormComponent {
     }
 
     if (this.acaoSistema.isAcaoIncluir()) {
-      this.telefonesUsuario = [];
       this.grupoInclusao = {};
       this.gruposVinculados = [];
       this.dataSourceGrupos.data = this.gruposVinculados;
@@ -84,6 +83,7 @@ export class UsuarioFormComponent {
         idTipo: TipoUsuario.SERVIDOR_INTERNO.id,
         grupos: []
       };
+      this.usuario.senha = " ";
     }
 
     if (this.acaoSistema.isAcaoAlterar()) {
@@ -93,7 +93,6 @@ export class UsuarioFormComponent {
 
     if (this.acaoSistema.isAcaoAlterar() || this.acaoSistema.isAcaoVisualizar()) {
       this.usuario = route.snapshot.data.usuario;
-      this.telefonesUsuario = this.usuario.telefones;
       this.gruposVinculados = this.usuario.grupos;
       this.dataSourceGrupos.data = this.gruposVinculados;
     }

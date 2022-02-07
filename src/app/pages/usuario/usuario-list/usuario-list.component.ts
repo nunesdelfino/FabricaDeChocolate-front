@@ -28,7 +28,7 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
 
   public tiposCadastro: any[];
 
-  public displayedColumns = ['login', 'nome', 'acoes'];
+  public displayedColumns = ['login', 'nome', 'status', 'acoes'];
 
   @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator;
 
@@ -47,7 +47,7 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
     private usuarioClientService: UsuarioClientService
   ) {
     super();
-    const usuarios = route.snapshot.data.usuarios;
+    const usuarios = route.snapshot.data.usuario;
     this.tiposCadastro = route.snapshot.data.tiposCadastro;
     this.dataSource = new MatTableDataSource<any>(usuarios);
   }
@@ -57,6 +57,7 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
    */
   ngOnInit() {
     this.filtroDTO = FiltroUsuarioDTO.getInstace();
+    this.filtroDTO.status = "Ativo";
     this.dataSource.paginator = this.paginator;
   }
 
@@ -67,6 +68,9 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
    */
   public pesquisar(filtroUsuarioDTO: FiltroUsuarioDTO): void {
     this.usuarioClientService.getByFiltro(filtroUsuarioDTO).subscribe(data => {
+      if(filtroUsuarioDTO.nome != null){
+        filtroUsuarioDTO.status = "Ativo"
+      }
       this.dataSource.paginator = this.paginator;
       this.dataSource.data = data;
     }, data => {

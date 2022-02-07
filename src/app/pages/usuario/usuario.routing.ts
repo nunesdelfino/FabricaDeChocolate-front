@@ -2,14 +2,11 @@ import { Routes } from '@angular/router';
 
 import { SecurityGuard } from '../../shared/security/security.guard';
 import { UsuarioResolve } from './shared/usuario-client/usuario.resolve';
+import { UsuarioAtivoResolve } from './shared/usuario-client/usuario-ativo.resolve';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 
-/**
- * Configurações de rota de Usuário.
- *
- * @author Guiliano Rangel (UEG)
- */
+
 export const UsuarioRoutes: Routes = [
   {
     path: 'incluir',
@@ -19,11 +16,6 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'incluir',
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_INCLUIR'
-      //   ]
-      // }
     },
     resolve: {
       // sistemas: SistemaAtivoResolve
@@ -32,15 +24,8 @@ export const UsuarioRoutes: Routes = [
   {
     path: 'listar',
     component: UsuarioListComponent,
-    canActivate: [
-      SecurityGuard
-    ],
-    data: {
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_PESQUISAR'
-      //   ]
-      // }
+    resolve: {
+      usuario: UsuarioResolve,
     }
   },
   {
@@ -51,11 +36,6 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'alterar',
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_ALTERAR'
-      //   ]
-      // }
     },
     resolve: {
       usuario: UsuarioResolve,
@@ -70,11 +50,6 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'visualizar',
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_VISUALIZAR'
-      //   ]
-      // }
     },
     resolve: {
       usuario: UsuarioResolve

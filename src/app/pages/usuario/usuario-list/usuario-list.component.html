@@ -25,7 +25,7 @@
           <mat-label>{{'LABEL_STATUS_PORTAL' | i18n}}</mat-label>
           <mat-select placeholder="{{'LABEL_STATUS_PORTAL' | i18n}}" title="{{'LABEL_STATUS_PORTAL' | i18n}}"
                       [(ngModel)]="filtroDTO.status">
-            <mat-option [value]="undefined">{{ 'LABEL_TODOS' | i18n}}</mat-option>
+            <mat-option [value]="'T'">{{ 'LABEL_TODOS' | i18n}}</mat-option>
             <mat-option *ngFor="let statusAtivoInativo of listStatusAtivosInativos" [value]="statusAtivoInativo.id">
               {{statusAtivoInativo.descricao}}
             </mat-option>
@@ -95,6 +95,22 @@
                   </div>
                   <div>
                     {{element.nome}}
+                  </div>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
+                               *matHeaderCellDef> {{ 'LABEL_STATUS_PORTAL' | i18n}} </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="center center"
+                        *matCellDef="let element">
+                <div fxFlex fxLayout="row">
+                  <div>
+                    <mat-slide-toggle [(ngModel)]="element.status" (change)="alterarStatusUsuario(element)" name="statusUsuario"
+                                      title="{{ (element.status ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}"
+                    >
+                    </mat-slide-toggle>
                   </div>
                 </div>
               </mat-cell>

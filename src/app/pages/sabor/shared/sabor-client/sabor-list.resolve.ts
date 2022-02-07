@@ -19,12 +19,12 @@ export class SaborListResolve implements Resolve<any> {
    * Construtor da classe.
    *
    * @param router
-   * @param usuarioClientService
+   * @param saborClientService
    * @param messageService
    */
   constructor(
     private router: Router,
-    private usuarioClientService: SaborClientService,
+    private saborClientService: SaborClientService,
     private messageService: MessageService
   ) { }
 
@@ -38,8 +38,8 @@ export class SaborListResolve implements Resolve<any> {
 
     return new Observable(observer => {
       const filtro: FiltroSaborDTO = new FiltroSaborDTO();
-      filtro.sabor = '%%%%';
-      this.usuarioClientService.getByFiltro(filtro).subscribe(
+      filtro.ativo = 'S';
+      this.saborClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
           observer.complete();
@@ -50,7 +50,7 @@ export class SaborListResolve implements Resolve<any> {
             observer.complete();
           } else {
             observer.error(error);
-            this.router.navigate(['']);
+            this.router.navigate(['/administracao']);
             this.messageService.addMsgDanger(error);
           }
         }
