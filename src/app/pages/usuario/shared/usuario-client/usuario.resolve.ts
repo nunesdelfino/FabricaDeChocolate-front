@@ -17,10 +17,11 @@ export class UsuarioResolve implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
+    const id = route.params.id;
     return new Observable(observer => {
       const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
-      filtro.status = 'S';
-      this.usuarioClientService.getByFiltro(filtro).subscribe(
+      // filtro.status = 'S';
+      this.usuarioClientService.getById(id).subscribe(
         data => {
           observer.next(data);
           observer.complete();

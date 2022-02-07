@@ -14,6 +14,7 @@ import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 import { UsuarioClientModule } from './shared/usuario-client/usuario-client.module';
 import { UsuarioTelefoneFormComponent } from './usuario-telefone-form/usuario-telefone-form.component';
+import {UsuarioAtivoResolve} from "./shared/usuario-client/usuario-ativo.resolve";
 
 @NgModule({
   declarations: [
