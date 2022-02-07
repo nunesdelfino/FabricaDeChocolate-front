@@ -37,7 +37,7 @@ export class UsuarioAtivoResolve implements Resolve<any> {
 
     return new Observable(observer => {
       const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
-      filtro.status = "A"
+      filtro.status = "S"
       this.usuarioClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);

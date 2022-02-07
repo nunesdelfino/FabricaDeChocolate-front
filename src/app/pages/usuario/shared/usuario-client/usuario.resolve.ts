@@ -7,39 +7,21 @@ import { MessageService } from 'src/app/shared/message/message.service';
 import { UsuarioClientService } from './usuario-client.service';
 import {FiltroUsuarioDTO} from "../../../../shared/dto/filtro-usuario.dto";
 
-/**
- * Classe resolve responsável pela busca das informações de Usuário conforme o id.
- *
- * @author Guiliano Rangel (UEG)
- */
 @Injectable()
 export class UsuarioResolve implements Resolve<any> {
 
-  /**
-   * Construtor da classe.
-   *
-   * @param router
-   * @param usuarioClientService
-   * @param messageService
-   */
   constructor(
     private router: Router,
     private usuarioClientService: UsuarioClientService,
     private messageService: MessageService
   ) { }
 
-  /**
-   * Realiza a consulta por id de Usuário.
-   *
-   * @param route
-   */
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    const id = route.params.id;
 
     return new Observable(observer => {
       const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
-      filtro.status = "Ativo"
-      this.usuarioClientService.getById(id).subscribe(
+      filtro.status = 'S';
+      this.usuarioClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
           observer.complete();

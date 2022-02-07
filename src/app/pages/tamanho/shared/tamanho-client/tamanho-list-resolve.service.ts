@@ -28,17 +28,10 @@ export class TamanhoListResolve implements Resolve<any> {
     private messageService: MessageService
   ) { }
 
-  /**
-   * Realiza a consulta por id de Usuário.
-   *
-   * @param route
-   */
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    const id = route.params.id;
-
     return new Observable(observer => {
       const filtro: FiltroTamanhoDTO = new FiltroTamanhoDTO();
-      filtro.tamanho = '%%%%';
+      filtro.ativo = 'S';
       this.tamanhoClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);

@@ -20,11 +20,6 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'incluir',
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_INCLUIR'
-      //   ]
-      // }
     },
     resolve: {
       // sistemas: SistemaAtivoResolve
@@ -45,11 +40,6 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'alterar',
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_ALTERAR'
-      //   ]
-      // }
     },
     resolve: {
       usuario: UsuarioResolve,
@@ -64,11 +54,6 @@ export const UsuarioRoutes: Routes = [
     ],
     data: {
       acao: 'visualizar',
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_VISUALIZAR'
-      //   ]
-      // }
     },
     resolve: {
       usuario: UsuarioResolve
