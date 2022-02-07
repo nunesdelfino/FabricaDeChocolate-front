@@ -53,12 +53,8 @@ export class FiltroUsuarioDTO {
       params = params.append('nome', this.nome);
     }
 
-    if (this.status !== undefined) {
-      params = params.append('idStatus', this.status ? 'A' : 'I' );
-    }
-
-    if (this.idTipo) {
-      params = params.append('idTipo', this.idTipo);
+    if (this.status) {
+      params = params.append('status', this.status);
     }
     return params;
   }

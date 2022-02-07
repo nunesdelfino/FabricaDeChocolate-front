@@ -30,7 +30,7 @@
           <mat-label>{{'LABEL_STATUS_PEDIDO' | i18n}}</mat-label>
           <mat-select placeholder="{{'LABEL_STATUS_PEDIDO' | i18n}}" title="{{'LABEL_STATUS_PEDIDO' | i18n}}"
                       [(ngModel)]="filtroDTO.status">
-            <mat-option [value]="undefined">{{ 'LABEL_TODOS' | i18n}}</mat-option>
+            <mat-option [value]="'T'">{{ 'LABEL_TODOS' | i18n}}</mat-option>
             <mat-option *ngFor="let statusPedido of listStatusPedido" [value]="statusPedido.id">
               {{statusPedido.descricao}}
             </mat-option>

@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import { SecurityGuard } from '../../shared/security/security.guard';
 import { UsuarioResolve } from './shared/usuario-client/usuario.resolve';
+import { UsuarioAtivoResolve } from './shared/usuario-client/usuario-ativo.resolve';
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 
@@ -32,15 +33,8 @@ export const UsuarioRoutes: Routes = [
   {
     path: 'listar',
     component: UsuarioListComponent,
-    canActivate: [
-      SecurityGuard
-    ],
-    data: {
-      // security: {
-      //   roles: [
-      //     'ROLE_USUARIO_PESQUISAR'
-      //   ]
-      // }
+    resolve: {
+      // usuario: UsuarioAtivoResolve,
     }
   },
   {

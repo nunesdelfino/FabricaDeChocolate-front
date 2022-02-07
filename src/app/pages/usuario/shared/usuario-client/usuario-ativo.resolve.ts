@@ -13,7 +13,7 @@ import {FiltroUsuarioDTO} from "../../../../shared/dto/filtro-usuario.dto";
  * @author Guiliano Rangel (UEG)
  */
 @Injectable()
-export class UsuarioResolve implements Resolve<any> {
+export class UsuarioAtivoResolve implements Resolve<any> {
 
   /**
    * Construtor da classe.
@@ -34,12 +34,11 @@ export class UsuarioResolve implements Resolve<any> {
    * @param route
    */
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-    const id = route.params.id;
 
     return new Observable(observer => {
       const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
-      filtro.status = "Ativo"
-      this.usuarioClientService.getById(id).subscribe(
+      filtro.status = "A"
+      this.usuarioClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
           observer.complete();
