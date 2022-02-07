@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { UsuarioResolve } from './usuario.resolve';
 import { UsuarioClientService } from './usuario-client.service';
+import {UsuarioAtivoResolve} from "./usuario-ativo.resolve";
 
 
 /**
@@ -15,6 +16,7 @@ import { UsuarioClientService } from './usuario-client.service';
   ],
   providers: [
     UsuarioClientService,
+    UsuarioAtivoResolve,
     UsuarioResolve
   ]
 })

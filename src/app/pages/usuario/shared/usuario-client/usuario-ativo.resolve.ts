@@ -17,9 +17,10 @@ export class UsuarioAtivoResolve implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
+    const id = route.params.id;
     return new Observable(observer => {
       const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
-      filtro.nome = '%%%%';
+      filtro.status = 'S';
       this.usuarioClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
@@ -34,3 +35,4 @@ export class UsuarioAtivoResolve implements Resolve<any> {
     });
   }
 }
+
