@@ -6,11 +6,7 @@ import { UsuarioAtivoResolve } from './shared/usuario-client/usuario-ativo.resol
 import { UsuarioFormComponent } from './usuario-form/usuario-form.component';
 import { UsuarioListComponent } from './usuario-list/usuario-list.component';
 
-/**
- * Configurações de rota de Usuário.
- *
- * @author Guiliano Rangel (UEG)
- */
+
 export const UsuarioRoutes: Routes = [
   {
     path: 'incluir',
@@ -29,7 +25,7 @@ export const UsuarioRoutes: Routes = [
     path: 'listar',
     component: UsuarioListComponent,
     resolve: {
-      // usuario: UsuarioAtivoResolve,
+      usuario: UsuarioResolve,
     }
   },
   {

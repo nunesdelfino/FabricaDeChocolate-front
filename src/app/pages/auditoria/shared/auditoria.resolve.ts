@@ -45,7 +45,7 @@ export class AuditoriaResolve implements Resolve<any> {
         },
         error => {
           observer.error(error);
-          this.router.navigate(['']);
+          this.router.navigate(['/administracao']);
           this.messageService.addMsgDanger(error);
         }
       );

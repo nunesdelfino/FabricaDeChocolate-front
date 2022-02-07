@@ -17,7 +17,6 @@ export class UsuarioResolve implements Resolve<any> {
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
-
     return new Observable(observer => {
       const filtro: FiltroUsuarioDTO = new FiltroUsuarioDTO();
       filtro.status = 'S';
@@ -28,7 +27,7 @@ export class UsuarioResolve implements Resolve<any> {
         },
         error => {
           observer.error(error);
-          this.router.navigate(['']);
+          this.router.navigate(['/administracao']);
           this.messageService.addMsgDanger(error);
         }
       );

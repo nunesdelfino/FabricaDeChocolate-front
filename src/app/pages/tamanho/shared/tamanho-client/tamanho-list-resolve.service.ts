@@ -43,7 +43,7 @@ export class TamanhoListResolve implements Resolve<any> {
             observer.complete();
           } else {
             observer.error(error);
-            this.router.navigate(['']);
+            this.router.navigate(['/administracao']);
             this.messageService.addMsgDanger(error);
           }
         }
