@@ -44,10 +44,9 @@
             <div *ngIf=!(acaoSistema.isAcaoVisualizar())>
                 <mat-form-field fxFlex>
                   <mat-label>{{'LABEL_SENHA' | i18n}}</mat-label>
-                  <input matInput placeholder="{{'LABEL_INFORME_SENHA' | i18n}}" title="{{'LABEL_SENHA' | i18n}}"
-                         [(ngModel)]="usuario.senha" name="senha" required maxlength="254"
-                         [disabled]="acaoSistema.isAcaoVisualizar()"
-                  >
+                    <input matInput placeholder="{{'LABEL_INFORME_SENHA' | i18n}}" title="{{'LABEL_SENHA' | i18n}}"
+                           [(ngModel)]="usuario.senha" name="senha" required maxlength="254"
+                           [disabled]="acaoSistema.isAcaoVisualizar()">
                   <mat-error validationMessage [submitted]="submittedUsuario"></mat-error>
                 </mat-form-field>
             </div>

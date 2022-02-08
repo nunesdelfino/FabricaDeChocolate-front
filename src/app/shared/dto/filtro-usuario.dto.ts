@@ -7,19 +7,11 @@ import { HttpParams } from '@angular/common/http';
  * @author Guiliano Rangel (UEG)
  */
 export class FiltroUsuarioDTO {
-
-  /**
-   * Construtor da classe.
-   *
-   * @param login
-   * @param nome
-   * @param status
-   * @param idTipo
-   */
+  
   constructor(
     public login?: string,
     public nome?: string,
-    public status?: string,
+    public status?: boolean,
     public idTipo?: string
   ) { }
 
@@ -53,9 +45,12 @@ export class FiltroUsuarioDTO {
       params = params.append('nome', this.nome);
     }
 
-    if (this.status) {
-      params = params.append('status', this.status);
+    if (this.status != null) {
+      params = params.append('idStatus', this.status ? 'A' : 'I');
     }
     return params;
+
   }
+
+
 }

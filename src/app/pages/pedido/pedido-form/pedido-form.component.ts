@@ -24,6 +24,8 @@ import { Location } from '@angular/common';
 })
 export class PedidoFormComponent extends AbstractComponent  implements OnInit {
 
+  minDate = new Date();
+
   public acaoSistema: AcaoSistema;
 
   public pedido: any;
