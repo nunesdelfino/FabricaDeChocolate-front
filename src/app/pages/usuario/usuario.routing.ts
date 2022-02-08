@@ -25,7 +25,7 @@ export const UsuarioRoutes: Routes = [
     path: 'listar',
     component: UsuarioListComponent,
     resolve: {
-      usuario: UsuarioAtivoResolve,
+      // usuario: UsuarioAtivoResolve,
     }
   },
   {

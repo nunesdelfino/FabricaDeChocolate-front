@@ -4,5 +4,5 @@
 
 export const environment = {
   production: false,
-  urlApi: 'http://192.168.3.100:8081/fabricadechocolate-api/api/v1'
+  urlApi: 'http://192.168.3.101:8081/fabricadechocolate-api/api/v1'
 };
