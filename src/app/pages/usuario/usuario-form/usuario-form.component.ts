@@ -83,7 +83,7 @@ export class UsuarioFormComponent {
         idTipo: TipoUsuario.SERVIDOR_INTERNO.id,
         grupos: []
       };
-      this.usuario.senha = " ";
+      this.usuario.senha = "";
     }
 
     if (this.acaoSistema.isAcaoAlterar()) {
