@@ -57,7 +57,7 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
    */
   ngOnInit() {
     this.filtroDTO = FiltroUsuarioDTO.getInstace();
-    this.filtroDTO.status = "Ativo";
+    this.filtroDTO.status = true;
     this.dataSource.paginator = this.paginator;
   }
 
@@ -69,7 +69,7 @@ export class UsuarioListComponent extends AbstractComponent implements OnInit {
   public pesquisar(filtroUsuarioDTO: FiltroUsuarioDTO): void {
     this.usuarioClientService.getByFiltro(filtroUsuarioDTO).subscribe(data => {
       if(filtroUsuarioDTO.nome != null){
-        filtroUsuarioDTO.status = "Ativo"
+        filtroUsuarioDTO.status = true
       }
       this.dataSource.paginator = this.paginator;
       this.dataSource.data = data;
