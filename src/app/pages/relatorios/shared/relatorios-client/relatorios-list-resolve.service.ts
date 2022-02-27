@@ -1,0 +1,53 @@
+/* tslint:disable:no-redundant-jsdoc */
+import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
+
+import { MessageService } from 'src/app/shared/message/message.service';
+import { RelatoriosClientService } from './relatorios-client.service';
+import {FiltroTamanhoDTO} from "../../../../shared/dto/filtro-tamanho.dto";
+
+/**
+ * Classe resolve responsável pela busca das informações de Usuário conforme o id.
+ *
+ * @author Maria E F Oliveira
+ */
+@Injectable()
+export class TamanhoListResolve implements Resolve<any> {
+
+  /**
+   * Construtor da classe.
+   *
+   * @param router
+   * @param tamanhoClientService
+   * @param messageService
+   */
+  constructor(
+    private router: Router,
+    private tamanhoClientService: RelatoriosClientService,
+    private messageService: MessageService
+  ) { }
+
+  resolve(route: ActivatedRouteSnapshot): Observable<any> {
+    return new Observable(observer => {
+      const filtro: FiltroTamanhoDTO = new FiltroTamanhoDTO();
+      filtro.ativo = 'S';
+      this.tamanhoClientService.getByFiltro(filtro).subscribe(
+        data => {
+          observer.next(data);
+          observer.complete();
+        },
+        error => {
+          if (error.ativo === 404) { //ativo ou status?
+            observer.next();
+            observer.complete();
+          } else {
+            observer.error(error);
+            this.router.navigate(['/administracao']);
+            this.messageService.addMsgDanger(error);
+          }
+        }
+      );
+    });
+  }
+}
