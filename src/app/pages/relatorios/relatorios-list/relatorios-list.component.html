@@ -1,61 +1,28 @@
 <div fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
   <div fxLayout="row">
     <div fxFlex fxFlexAlign="center">
-      <span class="content__title">{{ "LABEL_PESQUISAR_TAMANHO" | i18n }}</span>
-    </div>
-    <div fxFlex fxLayoutAlign="end center">
-      <button
-        class="mat-button mat-raised-button mat-accent mat-button-base"
-        title="{{ 'LABEL_ADICIONAR_NOVO' | i18n }}"
-        routerLink="/administracao/tamanho/incluir"
-      >
-        {{ "LABEL_ADICIONAR_NOVO" | i18n }}
-      </button>
+      <span class="content__title">{{ "LABEL_RELATORIO" | i18n }}</span>
     </div>
   </div>
 
   <mat-card>
-    <mat-card-title>{{ "LABEL_FILTRO_PARA_PESQUISA" | i18n }}</mat-card-title>
+
     <mat-card-content fxLayout="column">
-      <div
-        fxLayout="row"
-        fxLayoutAlign.gt-xs="center end"
-        fxLayout.lt-sm="column"
-      >
-        <mat-form-field fxFlex fxFlex.gt-xs="70" fxFlex.lt-sm="100">
-          <mat-label>{{ "LABEL_TAMANHO" | i18n }}</mat-label>
-          <input
-            matInput
-            placeholder="{{ 'LABEL_TAMANHO_HINT' | i18n }}"
-            title="{{ 'LABEL_TAMANHO' | i18n }}"
-            [(ngModel)]="filtroDTO.tamanho"
-            maxlength="100"
-          />
+      <div fxLayout="row" fxLayoutAlign.gt-xs="center end" fxLayout.lt-sm="column" >
+        <mat-form-field fxFlex.gt-xs="30" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1" >
+          <mat-label>{{ "LABEL_DATAINICIAL" | i18n }}</mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="filtroDTO.dataInicio" name="dataInicial" required readonly
+                 (focus)="picker.open()" (click)="picker.open()" placeholder="{{'LABEL_DATAINICIAL' | i18n}}">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
-        <!--Adicionado-->
-        <mat-form-field
-          fxFlex.gt-xs="30"
-          fxFlex.lt-sm="100"
-          fxFlexOffset.gt-xs="1"
-        >
-          <mat-label>{{ "LABEL_STATUS_TAMANHO" | i18n }}</mat-label>
-          <mat-select
-            placeholder="{{ 'LABEL_STATUS_TAMANHO' | i18n }}"
-            title="{{ 'LABEL_STATUS_TAMANHO' | i18n }}"
-            [(ngModel)]="filtroDTO.ativo"
-          >
-            <!--Estava status-->
-            <mat-option [value]="'T'">{{
-              "LABEL_TODOS" | i18n
-            }}</mat-option>
-            <mat-option
-              *ngFor="let statusAtivoInativo of listStatusAtivosInativosString"
-              [value]="statusAtivoInativo.id"
-            >
-              {{ statusAtivoInativo.descricao }}
-            </mat-option>
-          </mat-select>
+        <mat-form-field fxFlex.gt-xs="30" fxFlex.lt-sm="100" fxFlexOffset.gt-xs="1" >
+          <mat-label>{{ "LABEL_DATAFINAL" | i18n }}</mat-label>
+          <input matInput [matDatepicker]="picker1" [(ngModel)]="filtroDTO.dataFinal" name="dataFinal" required readonly
+                 (focus)="picker1.open()" (click)="picker1.open()" placeholder="{{'LABEL_DATAFINAL' | i18n}}">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
       </div>
 
@@ -97,106 +64,101 @@
       <div fxLayout="column" fxFlex="100">
         <div class="table-detail">
           <mat-table #table [dataSource]="dataSource">
-            <ng-container matColumnDef="nome">
-              <mat-header-cell
-                class="style-header"
-                fxHide.xs="true"
-                fxLayoutAlign="center center"
-                *matHeaderCellDef
-              >
+
+            <ng-container matColumnDef="id">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
                 {{ "LABEL_TAMANHO" | i18n }}
               </mat-header-cell>
-              <mat-cell
-                fxFlex.lt-sm="100"
-                ngClass.gt-sm="style-column"
-                fxLayoutAlign="start center"
-                *matCellDef="let element"
-              >
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
                 <div fxFlex fxLayout="row">
-                  <div
-                    fxFlex="130px"
-                    fxHide.gt-xs="true"
-                    fxLayoutAlign="end center"
-                    fxLayoutGap.lt-sm="1"
-                  >
-                    <span class="mat-body-strong"
-                      >{{ "LABEL_TAMANHO" | i18n }} :</span
-                    >
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
                   </div>
-                  <div class="espaco-linha">
-                    <!--conteudo da tabela*obs.:espaco-linha joga o conteudo para a direita-->
-                    {{ element.tamanho }}
-                  </div>
+                  <div class="espaco-linha"> {{ element.id }} </div>
                 </div>
               </mat-cell>
             </ng-container>
 
-            <ng-container matColumnDef="status">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
-                               *matHeaderCellDef> {{ 'LABEL_STATUS_TAMANHO' | i18n}} </mat-header-cell>
-              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="center center"
-                        *matCellDef="let element">
-                <div fxFlex fxLayout="row">
-                  <div>
-                    <mat-slide-toggle checked={{statusTamanho(element.ativo)}}
-                    (change)="alterarStatusTamanho(element)" name="statusTamanho"
-                    title="{{ (element.ativo ? 'LABEL_ATIVO' : 'LABEL_INATIVO') | i18n }}">
-                    </mat-slide-toggle>
-                  </div>
-                </div>
-              </mat-cell>
-            </ng-container>
-
-            <ng-container matColumnDef="acoes">
-              <mat-header-cell
-                fxFlex.gt-sm="100px"
-                class="style-header f"
-                fxLayoutAlign="center center"
-                *matHeaderCellDef
-              >
-                {{ "LABEL_ACOES" | i18n }}
+            <ng-container matColumnDef="nome">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
+                {{ "LABEL_TAMANHO" | i18n }}
               </mat-header-cell>
-              <mat-cell
-                fxFlex.lt-sm="150"
-                fxLayoutAlign="center center"
-                fxFlex.gt-sm="150px"
-                *matCellDef="let element"
-              >
-                <div
-                  fxFlex
-                  fxLayout="row"
-                  fxLayout.lt-sm="column"
-                  fxLayoutAlign="center center"
-                >
-                  <div fxHide.gt-xs="true" fxLayoutAlign="center center">
-                    <span class="mat-body-strong"
-                      >{{ "LABEL_ACOES" | i18n }} :</span
-                    >
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+                <div fxFlex fxLayout="row">
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
                   </div>
-                  <div fxLayout="row" fxLayoutAlign="center center">
-                    <!--                    <a mat-mini-fab title="{{'LABEL_VISUALIZAR_SABOR' | i18n}}" class="btn-primary"-->
-                    <!--                       [routerLink]="['/administracao/sabor', element.id, 'visualizar']">-->
-                    <!--                      <mat-icon>search</mat-icon>-->
-                    <!--                    </a>-->
+                  <div class="espaco-linha"> {{ element.id }} </div>
+                </div>
+              </mat-cell>
+            </ng-container>
 
-                    <a
-                      mat-mini-fab
-                      title="{{ 'LABEL_ALTERAR_SABOR' | i18n }}"
-                      class="btn-primary"
-                      [routerLink]="[
-                        '/administracao/tamanho',
-                        element.id,
-                        'alterar'
-                      ]"
-                    >
-                      <mat-icon>edit</mat-icon>
-                    </a>
-
-                    <!--                    <a mat-mini-fab title="{{'LABEL_REMOVER_SABOR' | i18n}}" class="btn-primary"-->
-                    <!--                       (click)="remover(element)">-->
-                    <!--                      <mat-icon>close</mat-icon>-->
-                    <!--                    </a>-->
+            <ng-container matColumnDef="numero">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
+                {{ "LABEL_TAMANHO" | i18n }}
+              </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+                <div fxFlex fxLayout="row">
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
                   </div>
+                  <div class="espaco-linha"> {{ element.id }} </div>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="tipo">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
+                {{ "LABEL_TAMANHO" | i18n }}
+              </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+                <div fxFlex fxLayout="row">
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                  </div>
+                  <div class="espaco-linha"> {{ element.id }} </div>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="tamanho">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
+                {{ "LABEL_TAMANHO" | i18n }}
+              </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+                <div fxFlex fxLayout="row">
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                  </div>
+                  <div class="espaco-linha"> {{ element.id }} </div>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="preco">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
+                {{ "LABEL_TAMANHO" | i18n }}
+              </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+                <div fxFlex fxLayout="row">
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                  </div>
+                  <div class="espaco-linha"> {{ element.id }} </div>
+                </div>
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="data">
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
+                {{ "LABEL_TAMANHO" | i18n }}
+              </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+                <div fxFlex fxLayout="row">
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
+                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                  </div>
+                  <div class="espaco-linha"> {{ element.id }} </div>
                 </div>
               </mat-cell>
             </ng-container>

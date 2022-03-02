@@ -6,6 +6,7 @@ import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { MessageService } from 'src/app/shared/message/message.service';
 import { RelatoriosClientService } from './relatorios-client.service';
 import {FiltroTamanhoDTO} from "../../../../shared/dto/filtro-tamanho.dto";
+import {FiltroRelatorioClienteDto} from "../../../../shared/dto/filtro-relatorio-cliente.dto";
 
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
@@ -13,32 +14,26 @@ import {FiltroTamanhoDTO} from "../../../../shared/dto/filtro-tamanho.dto";
  * @author Maria E F Oliveira
  */
 @Injectable()
-export class TamanhoListResolve implements Resolve<any> {
+export class RelatorioClienteListResolve implements Resolve<any> {
 
-  /**
-   * Construtor da classe.
-   *
-   * @param router
-   * @param tamanhoClientService
-   * @param messageService
-   */
   constructor(
     private router: Router,
-    private tamanhoClientService: RelatoriosClientService,
+    private relatoriosClientService: RelatoriosClientService,
     private messageService: MessageService
   ) { }
 
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     return new Observable(observer => {
-      const filtro: FiltroTamanhoDTO = new FiltroTamanhoDTO();
-      filtro.ativo = 'S';
-      this.tamanhoClientService.getByFiltro(filtro).subscribe(
+      const filtro: FiltroRelatorioClienteDto = new FiltroTamanhoDTO();
+      // filtro.dataInicio = '2020/01/01';
+      // filtro.dataFinal = '2023/01/01';
+      this.relatoriosClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
           observer.complete();
         },
         error => {
-          if (error.ativo === 404) { //ativo ou status?
+          if (error.ativo === 404) {
             observer.next();
             observer.complete();
           } else {

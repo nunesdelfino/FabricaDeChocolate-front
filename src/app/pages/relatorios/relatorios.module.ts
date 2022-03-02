@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {NgxMaskModule} from 'ngx-mask';
 import {FormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
+import {CommonModule, DatePipe} from '@angular/common';
 import {RouterModule} from '@angular/router';
 import {MaterialModule} from '../../layouts/material.module';
 

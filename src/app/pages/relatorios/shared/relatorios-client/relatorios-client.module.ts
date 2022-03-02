@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TamanhoResolve } from './relatorios-resolve.service';
 import { RelatoriosClientService } from './relatorios-client.service';
-import {TamanhoListResolve} from './relatorios-list-resolve.service';
+import { RelatorioClienteListResolve } from './relatorios-list-resolve.service';
 
 
 /**
@@ -16,8 +15,7 @@ import {TamanhoListResolve} from './relatorios-list-resolve.service';
   ],
   providers: [
     RelatoriosClientService,
-    TamanhoResolve,
-    TamanhoListResolve
+    RelatorioClienteListResolve
   ]
 })
 export class RelatoriosClientModule { }
