@@ -230,6 +230,7 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_CONTATO: 'Contato',
       LABEL_RELATORIO_CLIENTE: 'Relatório Cliente',
       LABEL_RELATORIO_VENDAS: 'Relatório Cliente',
+      // LABEL_SABORES: 'Sabores',
 
       // MSG
       ME001: 'Erro Inesperado.',
