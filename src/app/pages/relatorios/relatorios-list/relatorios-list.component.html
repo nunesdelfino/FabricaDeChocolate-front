@@ -65,62 +65,69 @@
         <div class="table-detail">
           <mat-table #table [dataSource]="dataSource">
 
+<!--            ID-->
             <ng-container matColumnDef="id">
               <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
-                {{ "LABEL_TAMANHO" | i18n }}
+                {{ "LABEL_NUMERO_PEDIDO" | i18n }}
               </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
                 <div fxFlex fxLayout="row">
                   <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
-                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                    <span class="mat-body-strong"> {{ "LABEL_NUMERO_PEDIDO" | i18n }} :</span >
                   </div>
                   <div class="espaco-linha"> {{ element.id }} </div>
                 </div>
               </mat-cell>
             </ng-container>
 
+<!--            NOME-->
             <ng-container matColumnDef="nome">
               <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
-                {{ "LABEL_TAMANHO" | i18n }}
+                {{ "LABEL_NOME" | i18n }}
               </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
                 <div fxFlex fxLayout="row">
                   <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
-                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                    <span class="mat-body-strong"> {{ "LABEL_NOME" | i18n }} :</span >
                   </div>
-                  <div class="espaco-linha"> {{ element.id }} </div>
+                  <div class="espaco-linha"> {{ element.nome }} </div>
                 </div>
               </mat-cell>
             </ng-container>
 
+<!--            CONTATO-->
             <ng-container matColumnDef="numero">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
-                {{ "LABEL_TAMANHO" | i18n }}
-              </mat-header-cell>
-              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="right center"
+                               *matHeaderCellDef> {{ 'LABEL_CONTATO' | i18n}} </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center"
+                        *matCellDef="let element">
                 <div fxFlex fxLayout="row">
-                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
-                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1">
+                    <span class="mat-body-strong">{{ 'LABEL_CONTATO' | i18n}} :</span>
                   </div>
-                  <div class="espaco-linha"> {{ element.id }} </div>
+                  <div>
+                    {{element.numero}}
+                  </div>
                 </div>
               </mat-cell>
             </ng-container>
 
+<!--            TIPO-->
             <ng-container matColumnDef="tipo">
               <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
-                {{ "LABEL_TAMANHO" | i18n }}
+                {{ "LABEL_TIPO_OVO" | i18n }}
               </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
                 <div fxFlex fxLayout="row">
                   <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
-                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                    <span class="mat-body-strong"> {{ "LABEL_TIPO_OVO" | i18n }} :</span >
                   </div>
-                  <div class="espaco-linha"> {{ element.id }} </div>
+                  <div class="espaco-linha"> {{ element.tipoOvo }} </div>
                 </div>
               </mat-cell>
             </ng-container>
 
+<!--            TAMANHO-->
             <ng-container matColumnDef="tamanho">
               <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
                 {{ "LABEL_TAMANHO" | i18n }}
@@ -130,35 +137,39 @@
                   <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
                     <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
                   </div>
-                  <div class="espaco-linha"> {{ element.id }} </div>
+                  <div class="espaco-linha"> {{ element.nomeTamanho }} g</div>
                 </div>
               </mat-cell>
             </ng-container>
 
+<!--            PRECO-->
             <ng-container matColumnDef="preco">
               <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
-                {{ "LABEL_TAMANHO" | i18n }}
+                {{ "LABEL_PRECO" | i18n }}
               </mat-header-cell>
               <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
                 <div fxFlex fxLayout="row">
                   <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
-                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                    <span class="mat-body-strong"> {{ "LABEL_PRECO" | i18n }} :</span >
                   </div>
-                  <div class="espaco-linha"> {{ element.id }} </div>
+                  <div class="espaco-linha"> {{ element.preco }} </div>
                 </div>
               </mat-cell>
             </ng-container>
 
+<!--            DATA PEDIDO-->
             <ng-container matColumnDef="data">
-              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center" *matHeaderCellDef >
-                {{ "LABEL_TAMANHO" | i18n }}
-              </mat-header-cell>
-              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="start center" *matCellDef="let element" >
+              <mat-header-cell class="style-header" fxHide.xs="true" fxLayoutAlign="center center"
+                               *matHeaderCellDef> {{ 'LABEL_DATA_ENTREGA' | i18n}} </mat-header-cell>
+              <mat-cell fxFlex.lt-sm="100" ngClass.gt-sm="style-column" fxLayoutAlign="center center"
+                        *matCellDef="let element">
                 <div fxFlex fxLayout="row">
-                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="end center" fxLayoutGap.lt-sm="1" >
-                    <span class="mat-body-strong"> {{ "LABEL_TAMANHO" | i18n }} :</span >
+                  <div fxFlex="130px" fxHide.gt-xs="true" fxLayoutAlign="center center" fxLayoutGap.lt-sm="1">
+                    <span class="mat-body-strong">{{ 'LABEL_DATA_ENTREGA' | i18n}} :</span>
                   </div>
-                  <div class="espaco-linha"> {{ element.id }} </div>
+                  <div xLayoutAlign="center center">
+                    {{element.dataEntrega | date: 'dd/MM/yyyy'}}
+                  </div>
                 </div>
               </mat-cell>
             </ng-container>

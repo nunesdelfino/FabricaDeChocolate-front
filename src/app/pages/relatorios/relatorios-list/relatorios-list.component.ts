@@ -1,4 +1,3 @@
-import { StatusSimNao } from 'src/app/shared/app.constantes';
 /* tslint:disable:no-redundant-jsdoc */
 import {ActivatedRoute} from '@angular/router';
 import {MatPaginator} from '@angular/material/paginator';
@@ -69,14 +68,27 @@ export class RelatoriosListComponent extends AbstractComponent implements OnInit
     this.dataSource.data = [];
   }
 
-  public mes(mes): number {
-    return mes + 1;
+  public mes(mes): string {
+    mes = mes + 1;
+    if (mes > 9) {
+      return mes.toString();
+    } else {
+      return 0 + mes.toString();
+    }
+  }
+
+  public dia(dia): string {
+    if (dia > 9) {
+      return dia.toString();
+    } else {
+      return 0 + dia.toString();
+    }
   }
 
   public data(data): string {
-    let d = new Date(data);
+    const d = new Date(data);
     // tslint:disable-next-line:radix
-    return(d.getFullYear() + '/' + 0 + this.mes(d.getMonth()) + '/' + 0 + d.getDate());
+    return(d.getFullYear() + '/' + this.mes(d.getMonth()) + '/' + this.dia(d.getDate()));
   }
 
 }

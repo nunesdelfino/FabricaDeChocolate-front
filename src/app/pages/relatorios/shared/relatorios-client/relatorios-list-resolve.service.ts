@@ -25,8 +25,7 @@ export class RelatorioClienteListResolve implements Resolve<any> {
   resolve(route: ActivatedRouteSnapshot): Observable<any> {
     return new Observable(observer => {
       const filtro: FiltroRelatorioClienteDto = new FiltroTamanhoDTO();
-      // filtro.dataInicio = '2020/01/01';
-      // filtro.dataFinal = '2023/01/01';
+      filtro.dataInicio = '2020/01/01';
       this.relatoriosClientService.getByFiltro(filtro).subscribe(
         data => {
           observer.next(data);
