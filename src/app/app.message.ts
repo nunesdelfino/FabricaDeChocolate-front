@@ -222,6 +222,16 @@ export class AppMessage implements InternacionalizacaoResource {
       PAGINATOR_ULTIMA_PAGINA: 'Última página',
       PAGINATOR_PRIMEIRA_PAGINA: 'Primeira página',
 
+      // Relatorio
+      LABEL_RELATORIO: 'Relatórios',
+      LABEL_DATAINICIAL: 'Data inicial',
+      LABEL_DATAFINAL: 'Data final',
+      LABEL_NUMERO_PEDIDO: 'N° do Pedido',
+      LABEL_CONTATO: 'Contato',
+      LABEL_RELATORIO_CLIENTE: 'Relatório Cliente',
+      LABEL_RELATORIO_VENDAS: 'Relatório Cliente',
+      // LABEL_SABORES: 'Sabores',
+
       // MSG
       ME001: 'Erro Inesperado.',
       ME002: 'Token inválido.',

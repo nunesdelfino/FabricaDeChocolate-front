@@ -21,7 +21,7 @@ import {AppMessage} from './app.message';
 import {AppInterceptor} from './app.interceptor';
 import {SecurityInterceptor} from './shared/security/security.interceptor';
 import { BsDatepickerModule, BsDatepickerConfig, BsLocaleService } from 'ngx-bootstrap/datepicker';
-import {registerLocaleData} from '@angular/common';
+import {DatePipe, registerLocaleData} from '@angular/common';
 import {defineLocale} from 'ngx-bootstrap';
 import {LoaderModule} from "./shared/loader/loader.module";
 import {ValidationResourceProvider} from "./shared/validation/validation.resource";
@@ -30,6 +30,7 @@ import {LayoutsModule} from "./layouts/layouts.module";
 import {AdministracaoModule} from './pages/administracao/administracao.module';
 import {MatPaginatorIntl} from '@angular/material/paginator';
 import {getPortuguesePaginatorIntl} from './shared/component/portuguese-paginator-intl';
+import {MAT_DATE_LOCALE} from "@angular/material/core";
 
 
 /**
@@ -74,6 +75,13 @@ registerLocaleData(ptBr);
     }),
   ],
   providers: [
+    {
+      provide: DatePipe,
+    },
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'en-GB'
+    },
     {
       provide: MatPaginatorIntl,
       useValue: getPortuguesePaginatorIntl()},

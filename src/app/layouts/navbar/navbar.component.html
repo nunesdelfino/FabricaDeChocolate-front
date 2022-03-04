@@ -42,6 +42,16 @@
         <span>{{ 'LABEL_PEDIDO' | i18n}}</span>
       </button>
 
+      <button mat-menu-item [routerLink]="['/administracao/relatorios']">
+        <mat-icon>assignment</mat-icon><!--Tipo icone-->
+        <span>{{ 'LABEL_RELATORIO_CLIENTE' | i18n}}</span>
+      </button>
+
+      <button mat-menu-item [routerLink]="['/administracao/vendas']">
+        <mat-icon>assignment</mat-icon><!--Tipo icone-->
+        <span>{{ 'LABEL_RELATORIO_VENDAS' | i18n}}</span>
+      </button>
+
     </mat-menu>
 
     <div fxFlex fxLayout fxLayoutAlign="start" fxHide.xs>
@@ -68,6 +78,14 @@
       <a mat-button [routerLink]="['/administracao/pedido']">
         <!--<mat-icon>assignment_ind</mat-icon>-->
         Pedido</a>
+
+      <a mat-button [routerLink]="['/administracao/relatorios']">
+        <!--<mat-icon>assignment_ind</mat-icon>-->
+        Relatorio Cliente</a>
+
+      <a mat-button [routerLink]="['/administracao/vendas']">
+        <!--<mat-icon>assignment_ind</mat-icon>-->
+        Relatorio Vendas</a>
     </div>
   </div>
 </mat-toolbar>

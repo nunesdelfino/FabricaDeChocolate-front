@@ -33,7 +33,7 @@ export class AutenticacaoGuard implements CanActivate {
 
     if (this.securityService.isValid()) {
       acesso = false;
-      this.router.navigate(['/']);
+      this.router.navigate(['/administracao']);
     }
     return acesso;
   }
