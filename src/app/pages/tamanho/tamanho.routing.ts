@@ -8,7 +8,7 @@ import { TamanhoListResolve} from './shared/tamanho-client/tamanho-list-resolve.
 /**
  * Configurações de rota de Tamanho.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export const TamanhoRoutes: Routes = [
   {

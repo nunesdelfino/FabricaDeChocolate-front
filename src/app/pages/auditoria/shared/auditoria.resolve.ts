@@ -9,7 +9,7 @@ import {AuditoriaService} from './auditoria.service';
 /**
  * Classe resolve responsável pela busca das informações da grupo conforme o id.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Injectable()
 export class AuditoriaResolve implements Resolve<any> {

@@ -6,7 +6,7 @@ import { RelatorioClienteListResolve } from './shared/relatorios-client/relatori
 /**
  * Configurações de rota de Tamanho.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export const RelatoriosRoutes: Routes = [
   {

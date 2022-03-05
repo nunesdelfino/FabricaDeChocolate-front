@@ -15,7 +15,7 @@ import { Location } from '@angular/common';
 /**
  * Componente de formulário de Amigo.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-amigo-form',

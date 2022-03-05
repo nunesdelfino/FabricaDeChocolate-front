@@ -3,7 +3,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 /**
  * Class responsável pelo controle do componente de 'Loader'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Injectable()
 export class LoaderService {

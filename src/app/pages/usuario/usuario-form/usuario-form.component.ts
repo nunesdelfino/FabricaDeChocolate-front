@@ -15,7 +15,7 @@ import { GrupoClientService } from '../../grupo/shared/grupo-client/grupo-client
 /**
  * Componente de formulário de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-usuario-form',

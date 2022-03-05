@@ -10,7 +10,7 @@ import {AbstractComponent} from '../../shared/component/Abstract.component';
 /**
  * Componente Navbar
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-navbar',

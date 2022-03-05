@@ -14,7 +14,7 @@ import { PedidoProducaoComponent } from './pedido-producao/pedido-producao.compo
 /**
  * Configurações de rota de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export const PedidoRoutes: Routes = [
   {

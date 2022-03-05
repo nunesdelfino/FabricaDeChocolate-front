@@ -4,7 +4,7 @@ import { HttpResponse } from '@angular/common/http';
 /**
  * Classe abstract Service.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export abstract class AbstractService {
 

@@ -4,10 +4,10 @@ import { HttpParams } from '@angular/common/http';
 /**
  * Classe de trânsferencia com os parâmetros utilizados em filtros de pesquisa de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class FiltroUsuarioDTO {
-  
+
   constructor(
     public login?: string,
     public nome?: string,
