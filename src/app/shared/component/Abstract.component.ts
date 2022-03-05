@@ -13,7 +13,7 @@ import {
   StatusSimNao,
   StatusPedido,
   TipoOvo,
-  StatusAtivoInativoString
+  StatusAtivoInativoString, StatusEntregar
 } from '../app.constantes';
 
 /**
@@ -38,6 +38,7 @@ export class AbstractComponent {
   public listTiposUsuarios: Array<TipoUsuario>;
   public listTiposTelefones: Array<TipoTelefone>;
   public listTiposRevisoes: Array<TipoRevisao>;
+  public listEntregar: Array<StatusEntregar>;
 
   constructor() {
     this.initListStatusAtivosInativos();
@@ -50,6 +51,13 @@ export class AbstractComponent {
     this.initListStatusPedidoAceito();
     this.initListStatusPedidoCancelado();
     this.initListTipoOvo();
+    this.initListEntregar();
+  }
+
+  private initListEntregar(){
+    this.listEntregar = [];
+    this.listEntregar.push(StatusEntregar.SIM);
+    this.listEntregar.push(StatusEntregar.NAO);
   }
 
   /**

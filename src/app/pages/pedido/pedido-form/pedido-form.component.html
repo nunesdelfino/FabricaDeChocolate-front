@@ -180,8 +180,7 @@
               <mat-datepicker #picker></mat-datepicker>
             </mat-form-field>
 
-
-          </div>
+            </div>
 
             </div>
 
@@ -191,10 +190,24 @@
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_INFORME_ENDERECO' | i18n}}</mat-label>
               <textarea matInput placeholder="{{'LABEL_INFORME_ENDERECO' | i18n}}" title="{{'LABEL_INFORME_ENDERECO' | i18n}}"
-                     [(ngModel)]="pedido.endereco" name="endereco" maxlength="150" rows="2"
+                     [(ngModel)]="pedido.endereco" name="endereco" maxlength="150" rows="3"
                         [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
               ></textarea>
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
+            </mat-form-field>
+
+            <mat-form-field fxFlex>
+              <mat-label>{{'LABEL_ENTREGAR' | i18n}}</mat-label>
+              <mat-select placeholder="{{'LABEL_ENTREGAR' | i18n}}" title="{{'LABEL_ENTREGAR' | i18n}}"
+                          [(ngModel)]="pedido.entregar"
+                          [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
+                          name="saborCinco"
+              >
+                <mat-option [value]="undefined">{{ 'LABEL_SELECIONE' | i18n}}</mat-option>
+                <mat-option *ngFor="let item of listEntregar" [value]="item.id">
+                  {{item.descricao}}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
 
