@@ -21,7 +21,7 @@ export const PAGINATOR_PAGE_SIZE = 5;
 /**
  * Classe que disponibiliza as constantes de Status na aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class StatusAtivoInativo {
 
@@ -139,7 +139,7 @@ export class TipoOvo {
 /**
  * Classe que disponibiliza as constantes de Status SimNao na aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class StatusSimNao {
 
@@ -180,7 +180,7 @@ export class StatusEntregar {
 /**
  * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class TipoUsuario {
 
@@ -201,7 +201,7 @@ export class TipoUsuario {
 /**
  * Classe que disponibiliza as constantes de Tipos de Telefone na aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class TipoTelefone {
 
@@ -224,7 +224,7 @@ export class TipoTelefone {
 /**
  * Classe que disponibiliza as constantes de Tipos de Revisão na aplicação.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class TipoRevisao {
 

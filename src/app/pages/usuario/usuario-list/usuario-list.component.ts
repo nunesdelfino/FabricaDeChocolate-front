@@ -13,7 +13,7 @@ import { UsuarioClientService } from '../shared/usuario-client/usuario-client.se
 /**
  * Componente de listagem de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-usuario-list',

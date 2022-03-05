@@ -8,7 +8,7 @@ import { MessageService, MessageItem } from '../message.service';
 /**
  * Implementação de 'component' responsável por gerar a estrutura 'html' onde os alertas serão gerados.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'alert-message',

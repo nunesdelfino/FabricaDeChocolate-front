@@ -14,7 +14,7 @@ import {FiltroSaborDTO} from "../../../shared/dto/filtro-sabor.dto";
 /**
  * Componente de listagem de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-sabor-list',

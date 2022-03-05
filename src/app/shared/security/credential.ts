@@ -7,7 +7,7 @@ import {User} from './User';
 /**
  * Classe 'Credential'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export class Credential {
 

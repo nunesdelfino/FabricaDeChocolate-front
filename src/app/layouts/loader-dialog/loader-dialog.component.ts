@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MatDialogRef } from '@angular/material';
 
 /**
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-loader-dialog',

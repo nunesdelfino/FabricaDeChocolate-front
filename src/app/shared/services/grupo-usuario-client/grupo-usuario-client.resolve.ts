@@ -9,7 +9,7 @@ import {GrupoUsuarioClientService} from './grupo-usuario-client.service';
 /**
  * Classe resolve responsável pela lista dos Sistemas que o Usuário Logado possui acesso.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Injectable()
 export class GrupoUsuarioClientResolve implements Resolve<any> {

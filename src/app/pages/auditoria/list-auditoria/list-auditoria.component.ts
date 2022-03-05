@@ -19,7 +19,7 @@ const NOME_DOCUMENTO_EXPORTACAO = 'exportacao_log_auditoria.pdf';
 /**
  * Componente de listagem de Auditoria.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-filter-audit',

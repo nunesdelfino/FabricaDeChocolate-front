@@ -8,7 +8,7 @@ import {AdministracaoComponent} from "../administracao/administracao.component";
 /**
  * Configuração de 'Rotas' do módulo 'Home'.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 export const HomeRoutes: Routes = [
   {

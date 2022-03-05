@@ -8,7 +8,7 @@ import {MaterialModule} from '../../layouts/material.module';
 /**
  * Módulo responsável por prover recursos para simplificar a validação de campos nos formulários do sistema.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @NgModule({
   imports: [

@@ -11,7 +11,7 @@ import {SaborClientService} from '../shared/sabor-client/sabor-client.service';
 /**
  * Componente de formulário de Usuário.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Component({
   selector: 'app-usuario-form',

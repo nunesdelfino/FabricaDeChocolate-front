@@ -10,7 +10,7 @@ import {FiltroPedidoDTO} from '../../../../shared/dto/filtro-pedido.dto';
 /**
  * Classe resolve responsável pela busca das informações de Usuário conforme o id.
  *
- * @author Guiliano Rangel (UEG)
+ * @author Gabriel Nunes Delfino
  */
 @Injectable()
 export class PedidoListResolve implements Resolve<any> {
