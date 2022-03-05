@@ -182,10 +182,11 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
     return StatusPedido.ACEITOPG.id
   }
 
-
-
   public pendenteDescricao(): string {
     return StatusPedido.ACEITOPG.descricao
   }
 
+  public entregar(pedido): void {
+
+  }
 }

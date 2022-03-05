@@ -159,6 +159,24 @@ export class StatusSimNao {
   ) {}
 }
 
+export class StatusEntregar {
+
+  public static readonly SIM: StatusSimNao = new StatusSimNao('SIM', 'Sim');
+
+  public static readonly NAO: StatusSimNao = new StatusSimNao('NAO', 'Não');
+
+  /**
+   * Construtor da classe.
+   *
+   * @param id
+   * @param descricao
+   */
+  constructor(
+    public id: string,
+    public descricao: string
+  ) {}
+}
+
 /**
  * Classe que disponibiliza as constantes de Tipos de Usuário na aplicação.
  *
