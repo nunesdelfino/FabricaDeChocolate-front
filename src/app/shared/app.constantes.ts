@@ -77,6 +77,8 @@ export class StatusPedido {
 
   public static readonly ACEITONPG: StatusPedido = new StatusPedido('aceitonpg', 'Aceito - Pagamento Pendente');
 
+  public static readonly ENTREGUE: StatusPedido = new StatusPedido('entregue', 'Entregue');
+
   public static readonly CANCELADO: StatusPedido = new StatusPedido('cancelado', 'Cancelado');
 
   /**
