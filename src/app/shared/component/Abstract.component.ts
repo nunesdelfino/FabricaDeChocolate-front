@@ -59,8 +59,9 @@ export class AbstractComponent {
     this.listStatusPedido = [];
     this.listStatusPedido.push(StatusPedido.ACEITOPG);
     this.listStatusPedido.push(StatusPedido.ACEITONPG);
-    this.listStatusPedido.push(StatusPedido.CANCELADO);
+    this.listStatusPedido.push(StatusPedido.ENTREGUE);
     this.listStatusPedido.push(StatusPedido.PENDENTE);
+    this.listStatusPedido.push(StatusPedido.CANCELADO);
   }
 
   /**
@@ -68,8 +69,9 @@ export class AbstractComponent {
    */
   private initListStatusPedidoAceito(){
     this.listStatusPedidoAceito = [];
-    this.listStatusPedidoAceito.push(StatusPedido.CANCELADO);
     this.listStatusPedidoAceito.push(StatusPedido.ACEITOPG);
+    this.listStatusPedidoAceito.push(StatusPedido.ENTREGUE);
+    this.listStatusPedidoAceito.push(StatusPedido.CANCELADO);
   }
 
   /**
@@ -77,6 +79,7 @@ export class AbstractComponent {
    */
   private initListStatusPedidoCancelado(){
     this.listStatusPedidoCancelado = [];
+    this.listStatusPedidoCancelado.push(StatusPedido.ENTREGUE);
     this.listStatusPedidoCancelado.push(StatusPedido.CANCELADO);
   }
 
