@@ -232,6 +232,15 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_RELATORIO_VENDAS: 'Relatório Cliente',
       // LABEL_SABORES: 'Sabores',
 
+      // Custo
+      LABEL_CUSTOS: 'Custos',
+      LABEL_ITEM: 'Item',
+      LABEL_DATA: 'Data',
+      LABEL_NOME_ESTABELECIMENTO: 'Nome estabelecimento',
+      LABEL_REMOVER_CUSTO: 'Remover Custo',
+      LABEL_ALTERAR_CUSTO: 'Alterar Custo',
+      LABEL_VISUALIZAR_CUSTO: 'Visualizar Custo',
+
       // MSG
       ME001: 'Erro Inesperado.',
       ME002: 'Token inválido.',

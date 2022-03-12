@@ -71,6 +71,9 @@ export const AdministracaoRoutes: Routes = [
       },
       {
         path: 'vendas', loadChildren: () => import('../relatorio-vendas/relatorio-vendas.module').then(m => m.RelatorioVendasModule)
+      },
+      {
+        path: 'custos', loadChildren: () => import('../custos/custos.module').then(m => m.CustosModule)
       }
     ]
   }
