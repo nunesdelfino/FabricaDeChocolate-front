@@ -74,9 +74,21 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
 
     if (this.acaoSistema.isAcaoAlterar() || this.acaoSistema.isAcaoVisualizar()) {
       this.pedido = route.snapshot.data.pedido;
+      this.pedido.dataEntrega = this.manipulaData(this.pedido.dataEntrega);
     }
   }
 
+  public manipulaData(s: string){
+    let d = s.split('-');
+    d[2] = this.soma(d[2]);
+    return d[0] + '-' + d[1] + '-' + d[2];
+  }
+
+  public soma(s: string){
+    let n = parseInt(s);
+    n = n + 1;
+    return n.toString();
+  }
 
   /**
    * Salva a instância de Amigo.
@@ -88,6 +100,10 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
   public salvar(pedido: any, form: NgForm, event: any) {
     form.onSubmit(event);
     this.submittedPedido = true;
+
+    if(pedido.preco != undefined && pedido.preco < 0){
+      pedido.preco = pedido.preco.replace(',','.');
+    }
 
     if (form.valid) {
       this.pedidoClientService.salvar(pedido).subscribe(() => {

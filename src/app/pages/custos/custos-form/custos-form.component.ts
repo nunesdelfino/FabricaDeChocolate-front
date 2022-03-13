@@ -65,9 +65,21 @@ export class CustosFormComponent extends AbstractComponent  implements OnInit {
 
     if (this.acaoSistema.isAcaoAlterar() || this.acaoSistema.isAcaoVisualizar()) {
       this.custos = route.snapshot.data.custos;
+      this.custos.data = this.manipulaData(this.custos.data);
     }
   }
 
+  public manipulaData(s: string){
+    let d = s.split('-');
+    d[2] = this.soma(d[2]);
+    return d[0] + '-' + d[1] + '-' + d[2];
+  }
+
+  public soma(s: string){
+    let n = parseInt(s);
+    n = n + 1;
+    return n.toString();
+  }
 
   /**
    * Salva a instância de Custos.
@@ -80,6 +92,10 @@ export class CustosFormComponent extends AbstractComponent  implements OnInit {
     form.onSubmit(event);
     this.submittedPedido = true;
 
+    if(custos.valor < 0){
+      custos.valor = custos.valor.replace(',','.');
+    }
+
     if (form.valid) {
       this.custosClientService.salvar(custos).subscribe(() => {
           this.router.navigate(['/administracao/custos']);
@@ -89,6 +105,7 @@ export class CustosFormComponent extends AbstractComponent  implements OnInit {
         });
     }
   }
+
 
   /**
    * Confirma o cancelamento e volta para a tela de Pesquisa.

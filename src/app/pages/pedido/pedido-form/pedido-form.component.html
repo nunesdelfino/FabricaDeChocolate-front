@@ -23,7 +23,7 @@
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_NOME' | i18n}}</mat-label>
               <input matInput placeholder="{{'LABEL_INFORME_NOME' | i18n}}" title="{{'LABEL_NOME' | i18n}}"
-                     [(ngModel)]="pedido.nome" name="nome" required maxlength="20"
+                     [(ngModel)]="pedido.nome" name="nome" required maxlength="60"
                      [disabled]="acaoSistema.isAcaoVisualizar()"
               >
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
@@ -32,7 +32,7 @@
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_INFORME_NUMERO' | i18n}}</mat-label>
               <input matInput placeholder="{{'LABEL_INFORME_NUMERO' | i18n}}" title="{{'LABEL_INFORME_NUMERO' | i18n}}"
-                     [(ngModel)]="pedido.numero" name="numero" required maxlength="40"
+                     [(ngModel)]="pedido.numero" name="numero" required maxlength="15"
                      [disabled]="acaoSistema.isAcaoVisualizar()" mask="(00) 0000-0000"
               >
               <mat-error validationMessage [submitted]="submittedPedido"></mat-error>
@@ -199,7 +199,7 @@
             <mat-form-field fxFlex>
               <mat-label>{{'LABEL_ENTREGAR' | i18n}}</mat-label>
               <mat-select placeholder="{{'LABEL_ENTREGAR' | i18n}}" title="{{'LABEL_ENTREGAR' | i18n}}"
-                          [(ngModel)]="pedido.entregar"
+                          [(ngModel)]="pedido.entregar" required
                           [disabled]="acaoSistema.isAcaoVisualizar() || statusPedidoPagoCancelado(pedido)"
                           name="saborCinco"
               >
