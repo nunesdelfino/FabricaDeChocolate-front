@@ -74,7 +74,7 @@ export class PedidoFormComponent extends AbstractComponent  implements OnInit {
 
     if (this.acaoSistema.isAcaoAlterar() || this.acaoSistema.isAcaoVisualizar()) {
       this.pedido = route.snapshot.data.pedido;
-      this.pedido.dataEntrega = this.manipulaData(this.pedido.dataEntrega);
+      // this.pedido.dataEntrega = this.manipulaData(this.pedido.dataEntrega);
     }
   }
 

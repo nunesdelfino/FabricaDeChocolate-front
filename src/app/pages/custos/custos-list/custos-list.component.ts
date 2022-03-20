@@ -57,6 +57,7 @@ export class CustosListComponent extends AbstractComponent implements OnInit {
    */
   ngOnInit() {
     this.filtroDTO = FiltroCustosDTO.getInstace();
+    this.data = null;
     this.dataSource.paginator = this.paginator;
   }
 
@@ -67,7 +68,7 @@ export class CustosListComponent extends AbstractComponent implements OnInit {
    */
   public pesquisar(filtroCustosDTO: FiltroCustosDTO): void {
     if (this.data != null) {
-      this.filtroDTO.data = formatDate(this.data, 'yyyy/MM/dd', 'pt-br');
+      this.filtroDTO.data = formatDate(this.data, 'yyyy-MM-dd', 'pt-br');
     }
     this.custosClientService.getByFiltro(filtroCustosDTO).subscribe(data => {
       this.dataSource.paginator = this.paginator;

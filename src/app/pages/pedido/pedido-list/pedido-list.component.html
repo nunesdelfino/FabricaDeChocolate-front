@@ -50,7 +50,7 @@
           <mat-label>{{'LABEL_TAMANHO' | i18n}}</mat-label>
           <mat-select placeholder="{{'LABEL_TAMANHO' | i18n}}" title="{{'LABEL_TAMANHO' | i18n}}"
                       [(ngModel)]="filtroDTO.idTamanho">
-            <mat-option [value]="undefined">{{ 'LABEL_TODOS' | i18n}}</mat-option>
+            <mat-option [value]="'T'">{{ 'LABEL_TODOS' | i18n}}</mat-option>
             <mat-option *ngFor="let tamanho of tamanhos" [value]="tamanho.id">
               {{tamanho.tamanho}}
             </mat-option>
@@ -133,7 +133,7 @@
                     <span class="mat-body-strong">{{ 'LABEL_TAMANHO' | i18n}} :</span>
                   </div>
                   <div>
-                    {{element.nomeTamanho}}
+                    {{element.nomeTamanho}} g
                   </div>
                 </div>
               </mat-cell>

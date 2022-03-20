@@ -65,20 +65,60 @@ export class CustosFormComponent extends AbstractComponent  implements OnInit {
 
     if (this.acaoSistema.isAcaoAlterar() || this.acaoSistema.isAcaoVisualizar()) {
       this.custos = route.snapshot.data.custos;
-      this.custos.data = this.manipulaData(this.custos.data);
     }
   }
 
   public manipulaData(s: string){
+
     let d = s.split('-');
-    d[2] = this.soma(d[2]);
-    return d[0] + '-' + d[1] + '-' + d[2];
+    return d[0] + '-' + this.diaMes(d[2], d[1]);
+
   }
 
-  public soma(s: string){
-    let n = parseInt(s);
-    n = n + 1;
-    return n.toString();
+  public doisDigitos(s: string) {
+    if(parseInt(s) < 10){
+      return "0" + s;
+    }
+    return s;
+  }
+
+  public diaMes(dia: string, mes: string){
+    let diaNum = parseInt(dia);
+    let mesNum = parseInt(mes);
+    if( diaNum == 31){
+      diaNum = 1;
+      mesNum = mesNum + 1;
+    } else {
+      diaNum = diaNum + 1;
+    }
+    return this.doisDigitos(mesNum.toString()) + "-" + this.doisDigitos(diaNum.toString());
+  }
+
+  public preparaData(s: string){
+    let d = s.split('-');
+
+    return d[0] + '-' + this.diaMesSave(d[2], d[1]);
+
+  }
+
+  public diaMesSave(dia: string, mes: string){
+    let diaNum = parseInt(dia);
+    let mesNum = parseInt(mes);
+    if( diaNum == 1){
+      mesNum = mesNum - 1;
+      if(mesNum == 2){
+        diaNum = 28;
+      } else {
+        if (mesNum == 4 || mesNum == 6 || mesNum == 9 || mesNum == 11) {
+          diaNum = 30;
+        } else {
+          diaNum = 31;
+        }
+      }
+    } else {
+      diaNum = diaNum - 1;
+    }
+    return this.doisDigitos(mesNum.toString()) + "-" + this.doisDigitos(diaNum.toString());
   }
 
   /**
@@ -92,7 +132,14 @@ export class CustosFormComponent extends AbstractComponent  implements OnInit {
     form.onSubmit(event);
     this.submittedPedido = true;
 
-    if(custos.valor < 0){
+    // console.log(typeof custos.data + custos.data);
+    // custos.data = this.preparaData(custos.data.toString());
+    // console.log(typeof custos.data + custos.data);
+    if(!this.acaoSistema.isAcaoAlterar()){
+      custos.data.setHours(12);
+    }
+
+    if((typeof custos.valor) == 'string'){
       custos.valor = custos.valor.replace(',','.');
     }
 
