@@ -75,7 +75,7 @@ export class PedidoListComponent extends AbstractComponent implements OnInit {
    */
   public pesquisar(filtroPedidoDTO: FiltroPedidoDTO): void {
     if (this.dataEntrega != null) {
-      this.filtroDTO.dataEntrega = formatDate(this.dataEntrega, 'yyyy/MM/dd', 'pt-br');
+      this.filtroDTO.dataEntrega = formatDate(this.dataEntrega, 'yyyy-MM-dd', 'pt-br');
     }
     this.pedidoClientService.getByFiltro(filtroPedidoDTO).subscribe(data => {
       this.dataSource.paginator = this.paginator;

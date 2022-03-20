@@ -2,9 +2,9 @@
 
   <div fxLayout="row">
     <div class="content__title" fxFlex fxFlexAlign="center">
-      <span *ngIf="acaoSistema.isAcaoAlterar()">{{'LABEL_ALTERAR_PEDIDO' | i18n}}</span>
-      <span *ngIf="acaoSistema.isAcaoIncluir()">{{'LABEL_INCLUIR_PEDIDO' | i18n}}</span>
-      <span *ngIf="acaoSistema.isAcaoVisualizar()">{{'LABEL_VISUALIZAR_PEDIDO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoAlterar()">{{'LABEL_ALTERAR_CUSTO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoIncluir()">{{'LABEL_INCLUIR_CUSTO' | i18n}}</span>
+      <span *ngIf="acaoSistema.isAcaoVisualizar()">{{'LABEL_VISUALIZAR_CUSTO' | i18n}}</span>
     </div>
   </div>
 
@@ -13,7 +13,7 @@
     <form #formCustos="ngForm">
       <mat-card fxLayout="column" fxLayoutGap="1%" fxLayoutGap.xs="2%">
         <mat-card-title>
-          <span>{{'LABEL_DADOS_PEDIDO' | i18n}}</span>
+          <span>{{'LABEL_DADOS_CUSTO' | i18n}}</span>
         </mat-card-title>
         <mat-card-content fxLayout="column" fxLayoutGap="0.7%" fxLayoutGap.xs="3%">
 
@@ -31,7 +31,7 @@
             </mat-form-field>
 
             <mat-form-field fxFlex fxFlex.gt-xs="50" fxFlex.lt-sm="100">
-              <mat-label>{{'LABEL_DATA_ENTREGA' | i18n}}</mat-label>
+              <mat-label>{{'LABEL_DATA_COMPRA' | i18n}}</mat-label>
               <input matInput [matDatepicker]="picker" [(ngModel)]="custos.data" name="dataEntrega" required readonly
                      (focus)="picker.open()" (click)="picker.open()"
                      [disabled]="acaoSistema.isAcaoVisualizar()">

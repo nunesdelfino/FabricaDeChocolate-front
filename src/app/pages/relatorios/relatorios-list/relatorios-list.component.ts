@@ -88,7 +88,7 @@ export class RelatoriosListComponent extends AbstractComponent implements OnInit
   public data(data): string {
     const d = new Date(data);
     // tslint:disable-next-line:radix
-    return(d.getFullYear() + '/' + this.mes(d.getMonth()) + '/' + this.dia(d.getDate()));
+    return(d.getFullYear() + '-' + this.mes(d.getMonth()) + '-' + this.dia(d.getDate()));
   }
 
 }

@@ -240,6 +240,9 @@ export class AppMessage implements InternacionalizacaoResource {
       LABEL_REMOVER_CUSTO: 'Remover Custo',
       LABEL_ALTERAR_CUSTO: 'Alterar Custo',
       LABEL_VISUALIZAR_CUSTO: 'Visualizar Custo',
+      LABEL_INCLUIR_CUSTO: 'Incluir Custo',
+      LABEL_DADOS_CUSTO: 'Dados do Custo',
+      LABEL_DATA_COMPRA: 'Data Compra',
 
       // MSG
       ME001: 'Erro Inesperado.',
